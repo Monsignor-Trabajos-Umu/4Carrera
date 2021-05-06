@@ -1,0 +1,4 @@
+*.png filter=lfs diff=lfs merge=lfs -text
+*.bmp filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+CM/Practicas/Codigo/imagenes/C0099.png filter=lfs diff=lfs merge=lfs -text

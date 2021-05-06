@@ -1,0 +1,126 @@
+; Sun Nov 15 16:19:53 CET 2020
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+([Andr%C3%B3meda] of  Mujeres+Notables
+
+	(Es_el_conyuge_de [Perseo])
+	(Es_hijo%2Fa_de [Casiopea])
+	(Genero "Hembra"))
+
+([Atenea] of  Deidades+Menores
+
+	(Es_el_dios%2Fa_del " la guerra, la civilización,sabiduría, estrategia en combate, de las ciencias, de la justicia y de la habilidad.")
+	(Es_hijo%2Fa_de [Zeus])
+	(Genero "Hembra"))
+
+([Cabeza+de+Medusa] of  Legendarios
+
+	(Propiedad Petrificar))
+
+([Casco+de+Hades] of  Legendarios
+
+	(Propiedad Invisibilidad))
+
+([Casiopea] of  Mujeres+Notables
+
+	(Es_el_progenitor_de [Andr%C3%B3meda]))
+
+([Ceto] of  Criaturas
+)
+
+([Doris] of  Ninfas
+
+	(Es_el_progenitor_de [Nereidas])
+	(Genero "Hembra"))
+
+([D%C3%A1nae] of  Mujeres+Notables
+
+	(Es_el_progenitor_de [Perseo])
+	(Estar_presa%2Fo_de [Ceto])
+	(Genero "Hembra"))
+
+([Escudo+de+Bronce] of  Normales
+)
+
+([Escudo+Espejo] of  Legendarios
+
+	(Propiedad Relfejo))
+
+([Grayas] of  Deidades+Menores
+
+	(Genero "Hembra")
+	(Posee_Objeto [Ojo+de+las+Grayas]))
+
+([Hades] of  Deidades+Mayores
+
+	(Es_hermano%2Fa_de
+		[Zeus]
+		[Poseid%C3%B3n])
+	(Posee_Objeto [Casco+de+Hades]))
+
+([Hermes] of  Deidades+Menores
+
+	(Genero "Varón")
+	(Posee_Objeto
+		[Sandalias+Aladas]
+		[Hoz+de+Acero]))
+
+([Hoz+de+Acero] of  Normales
+)
+
+([Medusa] of  Gorgonas
+
+	(Genero "Hembra")
+	(Posee_Objeto [Cabeza+de+Medusa]))
+
+([Nereidas] of  Ninfas
+
+	(Es_hijo%2Fa_de [Doris])
+	(Genero "Hembra"))
+
+([Ojo+de+las+Grayas] of  Legendarios
+)
+
+([p1_Class72] of  %3APAL-CONSTRAINT
+
+	(%3APAL-NAME "NoMuertoYVivo")
+	(%3APAL-STATEMENT "(Predicate)"))
+
+([Pegaso] of  Criaturas
+
+	(Posee_Capacidad Volar))
+
+([Perseo] of  Heroes
+
+	(Es_el_conyuge_de [Andr%C3%B3meda])
+	(Es_hijo%2Fa_de
+		[D%C3%A1nae]
+		[Zeus]))
+
+([Poseid%C3%B3n] of  Deidades+Mayores
+
+	(Es_el_dios%2Fa_del "Mar")
+	(Es_hermano%2Fa_de
+		[Hades]
+		[Zeus])
+	(Genero "Varón"))
+
+([Sandalias+Aladas] of  Legendarios
+
+	(Propiedad Volar))
+
+([Zeus] of  Deidades+Mayores
+
+	(Es_el_progenitor_de
+		[Perseo]
+		[Atenea])
+	(Es_hermano%2Fa_de
+		[Hades]
+		[Poseid%C3%B3n])
+	(Genero "Varón"))
+
+([Zurr%C3%B3n+M%C3%A1gico] of  Legendarios
+
+	(Propiedad Resistencia))

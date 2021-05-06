@@ -1,0 +1,104 @@
+package com.rules;
+import preDrools.Objetivo
+import personaje.PersonajeMitologico
+import enumerados.EnumEstado
+import enumerados.EnumObjeto
+import enumerados.EnumCapacidad
+import preDrools.ReglasAplicadas
+
+global preDrools.ReglasAplicadas salida;
+
+
+rule "Parar Objetivo Liberar"
+    agenda-group "Mito"
+    salience 10
+    when
+        $o:Objetivo(accion == "liberar a")
+        $suj:PersonajeMitologico(nombre == $o.protagonista)
+        $objDir: PersonajeMitologico(nombre == $o.objetivo)
+        PersonajeMitologico(this == $objDir, getEstado() == EnumEstado.VIVO,getSalvador() == $suj)
+    then
+        System.out.println("Sí, " +  $suj.getNombre() + " ha liberado a " + $objDir.getNombre());
+        System.out.print(salida);
+
+        drools.halt();
+end
+
+rule "Parar Objetivo Matar"
+    agenda-group "Mito"
+    salience 10
+    when
+        $o:Objetivo(accion == "matar a")
+        $suj:PersonajeMitologico(nombre == $o.protagonista)
+        $objDir: PersonajeMitologico(nombre == $o.objetivo)
+        PersonajeMitologico(this == $objDir, getEstado() == EnumEstado.MUERTO,getAsesino() == $suj)
+    then
+        System.out.println("Sí, " +  $suj.getNombre() + " ha matado a " + $objDir.getNombre());
+        System.out.print(salida);
+
+        drools.halt();
+end
+
+rule "Parar Objetivo Morir"
+    agenda-group "Mito"
+    salience 10
+    when
+        $o:Objetivo(accion == "morir")
+        $suj:PersonajeMitologico(nombre == $o.protagonista, getEstado() == EnumEstado.MUERTO)
+    then
+        System.out.println("Sí, " +  $suj.getNombre() + " ha muerto");
+        System.out.print(salida);
+
+        drools.halt();
+end
+
+
+rule "Parar Objetivo Tiene objeto"
+    agenda-group "Mito"
+    salience 10
+    when
+        $o:Objetivo(accion == "tener")
+        $objDir: EnumObjeto(nombreObjeto == $o.objetivo)
+        $suj:PersonajeMitologico(nombre == $o.protagonista, getObjetos() contains $objDir)
+    then
+        System.out.println("Sí, " +  $suj.getNombre() + " puede tener el objeto " + $objDir.getNombreObjeto() + " debido a:");
+        System.out.print(salida);
+        drools.halt();
+end
+
+
+rule "Parar Objetivo Capacidad"
+    agenda-group "Mito"
+    salience 10
+    when
+        $o:Objetivo(accion == "tener Capacidad")
+        $capacidad: EnumCapacidad(nombreCapacidad == $o.objetivo)
+        $suj:PersonajeMitologico(nombre == $o.protagonista, getCapacidades() contains $capacidad)
+    then
+        System.out.println("Sí, " +  $suj.getNombre() + " tiene la capacidad de " + $capacidad.getNombreCapacidad());
+        System.out.print(salida);
+
+        drools.halt();
+end
+
+
+
+
+
+
+
+// No tiene
+
+rule "Parar NO puede"
+    agenda-group "Mito"
+    salience 0
+    when
+        $o:Objetivo()
+    then
+        System.out.println("No, " +  $o.getProtagonista() + " no puede "+$o.getAccion() + " " +$o.getObjetivo());
+        System.out.print(salida);
+        drools.halt();
+end
+
+
+

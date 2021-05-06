@@ -1,0 +1,184 @@
+package com.rules;
+
+import personaje.Inmortal;
+import personaje.PersonajeMitologico;
+import personaje.mortal.Criatura;
+import personaje.mortal.humano.Humano;
+import personaje.mortal.humano.Heroe;
+import enumerados.*;
+
+import preDrools.ReglasAplicadas
+global preDrools.ReglasAplicadas salida;
+
+
+rule "Lootear Muerto"
+    agenda-group "Mito"
+    salience 3
+
+    when
+        $muerto:PersonajeMitologico(estado==EnumEstado.MUERTO)
+        $o: EnumObjeto(this != null) from $muerto.getObjetos()
+        $asesino: PersonajeMitologico(estado == EnumEstado.VIVO || estado == EnumEstado.LABERINTO , this != null) from $muerto.getAsesino()
+    then
+        $asesino.getObjetos().add($o);
+        $asesino.getCapacidades().add($o.getCapacidad());
+
+        $muerto.getObjetos().remove($o);
+        $muerto.getCapacidades().remove($o.getCapacidad());
+
+        salida.add($asesino.getNombre()+" obtiene el objeto " + $o +" del cadaver de " + $muerto.getNombre());
+        salida.add($asesino.getNombre()+" obtiene la capacidad " + $o.getCapacidad()+" debido a tener " + $o);
+
+    update($asesino);
+    update($muerto);
+end
+
+
+rule "Liberar Prisioneros"
+    agenda-group "Mito"
+    salience 3
+
+    when
+        $p:Criatura(estado==EnumEstado.MUERTO, nombre != EnumPersonaje.MINOTAURO.getNombre())
+        $apresado: PersonajeMitologico(estado == EnumEstado.PRISIONERO) from $p.getApresado()
+    then
+        $apresado.setEstado(EnumEstado.VIVO);
+        $p.getApresado().clear();
+        $apresado.setSalvador($p.getAsesino());
+        //System.out.println($apresado.getNombre()+" queda libre debido a la muerte de " + $p.getNombre());
+        salida.add($apresado.getNombre()+" queda libre debido a la muerte de " + $p.getNombre());
+
+    update($p);
+    update($apresado);
+end
+
+
+rule "Favor da Objeto"
+	agenda-group "Mito"
+    salience 3
+    //include attributes such as "salience" here...
+    when
+        $dios:PersonajeMitologico(estado == EnumEstado.VIVO)
+        $o: EnumObjeto(this != null) from $dios.getObjetos()
+        $p:Humano(estado == EnumEstado.VIVO,getFavores() contains $dios)
+    then
+        $p.getObjetos().add($o);
+        $p.getCapacidades().add($o.getCapacidad());
+        $dios.getObjetos().remove($o);
+        $dios.getCapacidades().remove($o.getCapacidad());
+        salida.add($p.getNombre()+" obtiene " +$o +" debido a tener el favor de "+$dios.getNombre());
+        salida.add($p.getNombre()+" obtiene la capacidad "+$o.getCapacidad());
+
+    update($dios);
+    update($p);
+end
+
+
+rule "Liberar Prisioneros Laberinto"
+    agenda-group "Mito"
+    salience 3
+
+    when
+        $p:Criatura(estado==EnumEstado.MUERTO, nombre == EnumPersonaje.MINOTAURO.getNombre())
+        $apresado: PersonajeMitologico(estado == EnumEstado.PRISIONERO) from $p.getApresado()
+    then
+        $apresado.setEstado(EnumEstado.VIVO);
+        $p.getApresado().clear();
+        $apresado.setSalvador($p.getAsesino());
+
+        salida.add($apresado.getNombre()+" queda libre debido a la muerte de " + $p.getNombre());
+        salida.add($p.getAsesino().getNombre()+" ayuda a salir a "+ $apresado.getNombre() + " del laberinto");
+
+    update($p);
+    update($apresado);
+end
+
+
+rule "Hefesto crea caja Adamantio"
+	agenda-group "Mito"
+	salience 3
+
+    //include attributes such as "salience" here...
+    when
+        $adamanto:EnumObjeto(this==EnumObjeto.ADAMANTO)
+        $cajaAdamanto:EnumObjeto(this==EnumObjeto.CAJAADAMANTO)
+        $dios:Inmortal(nombre==EnumPersonaje.HEFESTO.toString(),estado == EnumEstado.VIVO)
+        $p:Humano(estado == EnumEstado.VIVO,getFavores() contains $dios,getObjetos() contains $adamanto)
+    then
+        $p.getObjetos().add($cajaAdamanto);
+        $p.getCapacidades().add($cajaAdamanto.getCapacidad());
+        $p.getObjetos().remove($adamanto);
+        $p.getCapacidades().remove($adamanto.getCapacidad());
+
+        salida.add($p.getNombre()+" obtiene la capacidad de "+$cajaAdamanto.getCapacidad()+" debido a tener el " +$cajaAdamanto);
+
+    update($p);
+end
+
+
+rule "Hefesto da Arma Candente"
+	agenda-group "Mito"
+	salience 3
+    when
+        $hefesto:Inmortal(nombre == EnumPersonaje.HEFESTO)
+        $p:Humano(estado == EnumEstado.VIVO, getCapacidades() contains EnumCapacidad.AFILADO,
+         getCapacidades() not contains EnumCapacidad.FUEGO,getFavores() contains $hefesto)
+    then
+        $p.getObjetos().add(EnumObjeto.ARMACANDENTE);
+        $p.getCapacidades().add(EnumObjeto.ARMACANDENTE.getCapacidad());
+
+        salida.add($hefesto.getNombre() + " funde el arma de " + $p.getNombre() + " obteniendo así el "
+            + EnumObjeto.ARMACANDENTE.getNombreObjeto());
+        salida.add($p.getNombre()+" obtiene la capacidad " + EnumObjeto.ARMACANDENTE.getCapacidad()+" debido a tener "
+            + EnumObjeto.ARMACANDENTE.getNombreObjeto());
+
+    update($p)
+end
+
+
+rule "Matar a la Hidra de Lerna"
+    agenda-group "Mito"
+    salience 1
+    when
+        $heroe1: Humano(estado == EnumEstado.VIVO, getCapacidades() contains EnumCapacidad.FUEGO)
+        $heroe2: Humano(nombre != $heroe1.getNombre(), estado == EnumEstado.VIVO,
+            getCapacidades() contains EnumCapacidad.AFILADO || getCapacidades() contains EnumCapacidad.FUERZA)
+        $hidra: Criatura(nombre == EnumPersonaje.HIDRA.getNombre(), estado == EnumEstado.VIVO)
+    then
+        $hidra.setEstado(EnumEstado.MUERTO);
+        $hidra.setAsesino($heroe2);
+        salida.add($heroe2.getNombre() + " consiguió matar a la hidra junto con " + $heroe1.getNombre()
+            + " gracias a que este quemó los cuellos cortados por " + $heroe2.getNombre());
+        update($hidra);
+end
+
+
+rule "Heroe mata a Heroe"
+    agenda-group "Mito"
+    salience 1
+    when
+        $vencedor:Heroe(estado == EnumEstado.VIVO, getObjetos() contains EnumObjeto.CABEZAMEDUSA,
+            getCapacidades() contains EnumCapacidad.INVISIBILIDAD)
+
+        $vencido:Heroe(estado == EnumEstado.VIVO, getObjetos() contains EnumObjeto.CUERNODEMINOTAURO)
+    then
+        $vencido.setEstado(EnumEstado.MUERTO);
+        $vencido.setAsesino($vencedor);
+
+        salida.add($vencedor.getNombre() + " ha petrificado a " + $vencido.getNombre() + " apareciendo por sorpresa gracias a su invisibilidad");
+
+    update($vencido);
+    update($vencedor);
+end
+
+
+rule "Imprimir Datos Finales"
+	agenda-group "PrintRaro"
+    //include attributes such as "salience" here...
+    when
+    	$p:PersonajeMitologico()
+        //conditions
+    then
+        System.out.println($p);
+    	//update($a)
+end

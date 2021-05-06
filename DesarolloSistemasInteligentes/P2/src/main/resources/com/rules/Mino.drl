@@ -1,0 +1,201 @@
+package com.rules;
+
+import preDrools.ReglasAplicadas
+import personaje.PersonajeMitologico;
+import personaje.Inmortal;
+import personaje.mortal.Criatura;
+import personaje.mortal.humano.Humano;
+import personaje.mortal.humano.MujerImportante;
+import personaje.mortal.humano.HombreImportante;
+import enumerados.*;
+import java.util.stream.Collectors;
+
+global preDrools.ReglasAplicadas salida;
+
+rule "Humano va al laberinto"
+	agenda-group "Mito"
+	salience 2
+    when
+        $afilado: EnumCapacidad(nombreCapacidad == EnumCapacidad.AFILADO.nombreCapacidad)
+        $fuerza: EnumCapacidad(nombreCapacidad == EnumCapacidad.FUERZA.nombreCapacidad)
+        $hilo: EnumObjeto(nombreObjeto == EnumObjeto.HILODEARIADNA.nombreObjeto)
+        $p:Humano(estado == EnumEstado.VIVO, getObjetos() contains $hilo)
+        (
+            EnumCapacidad(this == $afilado) from $p.getCapacidades()
+        or
+            EnumCapacidad(this == $fuerza) from $p.getCapacidades()
+        )
+        $minotauro: Criatura(nombre == EnumPersonaje.MINOTAURO.nombre, estado==EnumEstado.LABERINTO)
+    then
+        $p.setEstado(EnumEstado.LABERINTO);
+        salida.add($p.getNombre()+" va al laberinto a matar al " + $minotauro.getNombre());
+
+    update($p);
+    update($minotauro)
+end
+
+rule "Ser apresado por el Minotauro"
+	agenda-group "Mito"
+	salience 2
+    when
+        $minotauro: Criatura(nombre == EnumPersonaje.MINOTAURO.nombre, estado==EnumEstado.LABERINTO)
+        $p: PersonajeMitologico(estado == EnumEstado.LABERINTO, this != $minotauro,
+                getCapacidades() not contains EnumCapacidad.AFILADO,
+                getCapacidades() not contains EnumCapacidad.FUERZA)
+    then
+        $p.getApresado().add($minotauro);
+        $p.setEstado(EnumEstado.PRISIONERO);
+
+        salida.add($p.getNombre()+" ha sido apresado por el " + $minotauro.getNombre() + " al perderse en el laberinto");
+
+    update($p);
+end
+
+rule "Matar al Minotauro"
+	agenda-group "Mito"
+	salience 2
+    when
+        $afilado: EnumCapacidad(nombreCapacidad == EnumCapacidad.AFILADO.nombreCapacidad)
+        $fuerza: EnumCapacidad(nombreCapacidad == EnumCapacidad.FUERZA.nombreCapacidad)
+        ($p: Humano(nombre != EnumPersonaje.MINOTAURO.nombre,estado == EnumEstado.LABERINTO, getCapacidades() contains $afilado)
+        or
+        $p: Humano(nombre != EnumPersonaje.MINOTAURO.nombre,estado == EnumEstado.LABERINTO, getCapacidades() contains $fuerza)
+        )
+        $minotauro: Criatura(nombre == EnumPersonaje.MINOTAURO.nombre, estado==EnumEstado.LABERINTO)
+    then
+        $minotauro.setEstado(EnumEstado.MUERTO);
+        $minotauro.setAsesino($p);
+
+        salida.add($p.getNombre()+" ha matado al " + $minotauro.getNombre());
+
+    update($p);
+    update($minotauro);
+end
+
+
+
+
+rule "Escapar del laberinto hilando"
+    agenda-group "Mito"
+	salience 2
+    when
+        $minotauro: Criatura(nombre == EnumPersonaje.MINOTAURO.nombre,estado == EnumEstado.MUERTO)
+        $hilo: EnumObjeto(nombreObjeto == EnumObjeto.HILODEARIADNA)
+        $personaje: Humano(estado == EnumEstado.LABERINTO,getObjetos() contains $hilo)
+    then
+        $personaje.setEstado(EnumEstado.VIVO);
+
+        salida.add($personaje.getNombre()+" ha escapado del laberinto gracias a tener el " + $hilo.getNombreObjeto());
+
+    update($personaje);
+end
+
+rule "Escapar del laberinto volando"
+    agenda-group "Mito"
+	salience 2
+    when
+        $minotauro: Criatura(nombre == EnumPersonaje.MINOTAURO.nombre,estado == EnumEstado.MUERTO)
+        $vuelo: EnumCapacidad(nombreCapacidad == EnumCapacidad.VOLAR.nombreCapacidad)
+        $hilo: EnumObjeto(nombreObjeto == EnumObjeto.HILODEARIADNA)
+        $personaje: Humano(estado == EnumEstado.LABERINTO,getCapacidades() contains $vuelo)
+    then
+        $personaje.setEstado(EnumEstado.VIVO);
+
+        salida.add($personaje.getNombre()+" ha escapado del laberinto gracias a tener la capacidad de " + $vuelo.getNombreCapacidad() );
+
+    update($personaje);
+end
+
+rule "Muerte Minotauro Cabrea a Minos con Dedalo e Icaro"
+	agenda-group "Mito"
+    salience 2
+    when
+        $toro:Criatura(nombre==EnumPersonaje.MINOTAURO.nombre, estado==EnumEstado.MUERTO)
+        $mino:HombreImportante(nombre==EnumPersonaje.MINOS.nombre, estado==EnumEstado.VIVO)
+        $deda:HombreImportante(nombre==EnumPersonaje.DEDALO.nombre, estado==EnumEstado.VIVO, getEnfadados() not contains $mino)
+        $icar:HombreImportante(nombre==EnumPersonaje.ICARO.nombre, estado==EnumEstado.VIVO, getEnfadados() not contains $mino)
+    then
+        $deda.getEnfadados().add($mino);
+        $icar.getEnfadados().add($mino);
+        $deda.setEstado(EnumEstado.LABERINTO);
+        $icar.setEstado(EnumEstado.LABERINTO);
+
+        //System.out.println("La muerte de "+ $toro.getNombre() +" provoca que " + $deda.getNombre()  +
+         //                           " y " + $icar.getNombre() +" tengan el enojo de " +$mino.getNombre() );
+        salida.add("La muerte de "+ $toro.getNombre() +" provoca que " + $deda.getNombre()  +
+         " y " + $icar.getNombre() +" tengan el enojo de " +$mino.getNombre() );
+        salida.add($deda.getNombre()+" y " + $icar.getNombre() +" son mandados hacia el laberinto por el cabreo de " + $mino.getNombre() );
+    update($deda);
+    update($icar);
+end
+
+
+
+rule "Conseguir Favor Ariadna"
+    agenda-group "Mito"
+	salience 2
+    when
+        $ariadna: MujerImportante(estado == EnumEstado.VIVO, nombre == EnumPersonaje.ARIADNA.nombre)
+        $personaje: Humano(nombre != EnumPersonaje.ARIADNA.nombre,
+                            estado == EnumEstado.VIVO,
+                            getCapacidades() contains EnumCapacidad.INVISIBILIDAD , getFavores() not contains $ariadna)
+
+    then
+        $personaje.getFavores().add($ariadna);
+        salida.add($personaje.getNombre()+" ha obtenido el favor de "+ $ariadna.getNombre() + " debido a ser invisible");
+
+    update($personaje);
+end
+
+rule "Reparar Alas"
+    agenda-group "Mito"
+	salience 2
+    when
+        //Si esta en el laberinto repara las alas con la cera y plumas del lugar
+        $rotas: EnumObjeto(nombreObjeto == EnumObjeto.ALASROTAS)
+        $alas: EnumObjeto(nombreObjeto == EnumObjeto.ALAS)
+        $personaje: HombreImportante(estado == EnumEstado.LABERINTO, getObjetos() contains $rotas)
+    then
+        $personaje.getObjetos().add($alas);
+        $personaje.getCapacidades().add($alas.getCapacidad());
+        $personaje.getObjetos().remove($rotas);
+        $personaje.getCapacidades().remove($rotas.getCapacidad());
+        salida.add($personaje.getNombre() + " obtiene " + $alas.getNombreObjeto() + " al reparar " +
+        $rotas.getNombreObjeto() + " con cera y plumas encontradas en el laberinto");
+        salida.add($personaje.getNombre() + " obtiene la capacidad " + $alas.getCapacidad().getNombreCapacidad());
+    update($personaje);
+end
+
+rule "Matar a Icaro"
+    agenda-group "Mito"
+	salience 2
+    when
+        //Si esta en el laberinto repara las alas con la cera y plumas del lugar
+        $alas: EnumObjeto(nombreObjeto == EnumObjeto.ALAS)
+        $personaje: HombreImportante(nombre == EnumPersonaje.ICARO.getNombre() ,estado == EnumEstado.VIVO, getObjetos() contains $alas)
+    then
+        $personaje.setEstado(EnumEstado.MUERTO);
+
+        salida.add($personaje.getNombre() + " muere al volar con " + $alas.getNombreObjeto() + " demasiado cerca del sol.");
+    update($personaje);
+end
+
+rule "Dedalo se va Sicilia"
+    agenda-group "Mito"
+	salience 2
+    when
+        //Si esta en el laberinto repara las alas con la cera y plumas del lugar
+        $alas: EnumObjeto(nombreObjeto == EnumObjeto.ALAS)
+        $dedalo: HombreImportante(nombre == EnumPersonaje.DEDALO.getNombre() ,estado == EnumEstado.VIVO, getObjetos() contains $alas)
+        $apolo : Inmortal(nombre == EnumPersonaje.APOLO, estado == EnumEstado.VIVO)
+    then
+        $apolo.getObjetos().add($alas);
+        $apolo.getCapacidades().add($alas.getCapacidad());
+        $dedalo.getObjetos().remove($alas);
+        $dedalo.getCapacidades().remove($alas.getCapacidad());
+
+        salida.add($dedalo.getNombre() + " construye un templo en Sicilia, en honor a " + $apolo.getNombre() + " ,tras escapar del laberinto");
+        salida.add($dedalo.getNombre() + " ofrece sus alas al templo de " + $apolo.getNombre() );
+    update($dedalo);
+    update($apolo);
+end

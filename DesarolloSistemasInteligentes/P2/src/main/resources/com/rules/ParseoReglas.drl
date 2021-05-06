@@ -1,0 +1,104 @@
+//created on: 14 nov. 2020
+package com.rules
+
+//list any import classes here.
+
+import personaje.PersonajeMitologico;
+import preDrools.ObjetoParseado;
+import enumerados.EnumEstado;
+//declare any global variables here
+
+rule "Añadir Objeto Personaje"
+	agenda-group "construccion"
+	salience 5
+    //Perseo tiene Espejo de Mano.
+    when
+    	$o:ObjetoParseado(tipoObjeto(),tieneOApresa=="tiene",$o.sino)
+    then
+    	//Añadimos el objeto
+    	//System.out.println($o);
+        $o.receptor.getObjetos().add($o.objeto);
+        $o.receptor.getCapacidades().add($o.objeto.getCapacidad());
+        update($o.receptor)
+        retract($o)
+end
+
+rule "Quitar Objeto Personaje"
+	agenda-group "construccion"
+	salience 5
+    //Perseo tiene Espejo de Mano.
+    when
+    	$o:ObjetoParseado(tipoObjeto(),tieneOApresa=="tiene",!$o.sino)
+    then
+    	//Eliminamos el objeto
+    	//System.out.println($o.receptor.getNombre() + " no tiene " + $o.objeto);
+        $o.receptor.getObjetos().remove($o.objeto);
+        $o.receptor.getCapacidades().remove($o.objeto.getCapacidad());
+        update($o.receptor)
+        retract($o)
+end
+
+
+rule "Añadir Favor"
+	agenda-group "construccion"
+    salience 5
+    //Perseo tiene el favor de Atenea
+    when
+    	$o:ObjetoParseado(tipoEnojoFavor(),$o.tipoFavor())
+    then
+        //System.out.println($o.receptor.getNombre() + " tiene el favor de " + $o.emisor.getNombre());
+    	//Añadimos el favor o el enojo
+    	//FIXME hay que comprobar algunos objetos como el escudo espejo a lo mejor es buena idea mantener el favor de
+        $o.receptor.getFavores().add($o.emisor);
+        update($o.receptor)
+        retract($o)
+end
+
+
+rule "Añadir Enojo"
+	agenda-group "construccion"
+    salience 5
+    //Casiopea tiene el enojo de Poseidón
+    when
+    	$o:ObjetoParseado(tipoEnojoFavor(),!$o.tipoFavor())
+    then
+         //System.out.println($o.receptor.getNombre() + " tiene el enojo de " + $o.emisor.getNombre());
+    	//Añadimos el favor o el enojo
+         $o.receptor.getEnfadados().add($o.emisor);
+         update($o.receptor)
+         retract($o)
+end
+
+
+
+rule "Añadir apresa"
+	agenda-group "construccion"
+    salience 5  //include attributes such as "salience" here...
+    when
+    	$o:ObjetoParseado(tipoApresa())
+    then
+        //System.out.println($o.receptor.getNombre() + " tiene apresado a " + $o.emisor.getNombre());
+    	$o.receptor.getApresado().add($o.emisor);
+    	$o.emisor.setEstado(EnumEstado.PRISIONERO);
+    	update($o.receptor)
+    	update($o.emisor)
+        retract($o)
+end
+
+
+
+
+rule "Mostrar base inicial"
+	agenda-group "Muestra Informacion Inicial"
+	salience 5
+    //include attributes such as "salience" here...
+    when
+    	$p:PersonajeMitologico()
+        //conditions
+    then
+    	//System.out.println($p.getNombre()+" esta "+$p.getEstado() +" tiene el favor de" +" y tiene " +$p.getObjetos
+    	// ());
+    	System.out.println($p);
+    	//update($a)
+end
+

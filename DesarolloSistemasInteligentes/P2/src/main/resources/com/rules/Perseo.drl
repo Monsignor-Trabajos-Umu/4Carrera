@@ -1,0 +1,169 @@
+//created on: 13 nov. 2020
+package com.rules
+
+import preDrools.ReglasAplicadas
+import personaje.Inmortal;
+import personaje.PersonajeMitologico;
+import personaje.mortal.Criatura;
+import personaje.mortal.humano.Humano;
+import personaje.mortal.humano.MujerImportante;
+import enumerados.*;
+import java.util.stream.Collectors;
+
+global preDrools.ReglasAplicadas salida;
+
+
+rule "Apresar Andromeda"
+	agenda-group "Mito"
+	salience 3
+    //include attributes such as "salience" here...
+    when
+        $c:Criatura(nombre == EnumPersonaje.CETO.toString(),estado==EnumEstado.VIVO)
+        $a:MujerImportante(nombre == EnumPersonaje.ANDROMEDA.toString(),estado==EnumEstado.VIVO)
+        //conditions
+    then
+        salida.add("Andrómeda queda presa debido a estar Ceto libre.");
+        $c.getApresado().add($a);
+    	$a.setEstado(EnumEstado.PRISIONERO);
+    update($a)
+    update($c)
+end
+
+
+rule "Liberar Ceto"
+	agenda-group "Mito"
+	salience 3
+
+    //include attributes such as "salience" here...
+    when
+    	$poseidon:PersonajeMitologico(nombre==EnumPersonaje.POSEIDON.toString(),estado==EnumEstado.VIVO)
+    	MujerImportante(nombre==EnumPersonaje.CASIOPEA.toString(),estado==EnumEstado.VIVO,enfadados contains $poseidon)
+        $ceto:Criatura(nombre == EnumPersonaje.CETO.toString(),estado==EnumEstado.PRISIONERO)
+    then
+        salida.add("Ceto queda libre debido a el enojo de Poseidón hacia Casiopea");
+        $poseidon.getApresado().clear();
+        $ceto.setEstado(EnumEstado.VIVO);
+        $ceto.setSalvador($poseidon);
+    update($poseidon);
+    update($ceto);
+end
+
+// Andromeda libre se realiza con el matar
+
+rule "Matar a Ceto"
+	agenda-group "Mito"
+	salience 2
+
+    //include attributes such as "salience" here...
+    when
+        $petrificar:EnumCapacidad(this == EnumCapacidad.PETRIFICAR)
+    	$p:Humano(estado==EnumEstado.VIVO,getCapacidades() contains $petrificar)
+        $c:Criatura(nombre == EnumPersonaje.CETO.nombre,estado == EnumEstado.VIVO)
+        //conditions
+    then
+        //Looteamos objetos
+        $c.setEstado(EnumEstado.MUERTO);
+        $c.setAsesino($p);
+        salida.add($p.getNombre()+" mata Ceto debido a tener la capacidad de "+ $petrificar);
+    update($p);
+    update($c);
+end
+
+
+rule "Matar a Medusa"
+	agenda-group "Mito"
+	salience 2
+
+    //include attributes such as "salience" here...
+    when
+        $medusa:Criatura(nombre==EnumPersonaje.MEDUSA.toString(),estado == EnumEstado.VIVO)
+        $p:Humano(estado == EnumEstado.VIVO,
+        getCapacidades() contains EnumCapacidad.RESISTENCIA,
+        getCapacidades() contains EnumCapacidad.VOLAR,
+        getCapacidades() contains EnumCapacidad.INVISIBILIDAD,
+        getCapacidades() contains EnumCapacidad.REFLEJO,
+        getCapacidades() contains EnumCapacidad.AFILADO || getCapacidades() contains EnumCapacidad.FUERZA)
+
+    then
+
+        salida.add($p.getNombre() + " mata a " +$medusa.getNombre() + " debido a ir armado y tener las capacidades Espejo, Invisibilidad y Vuelo");
+        //Looteamos objetos
+        $medusa.setEstado(EnumEstado.MUERTO);
+        $medusa.setAsesino($p);
+
+    update($p);
+    update($medusa);
+end
+
+rule "Hefesto pule escudo bronce dando escudo espejo"
+	agenda-group "Mito"
+	salience 2
+
+    //include attributes such as "salience" here...
+    when
+        $escudoEspejo:EnumObjeto(this==EnumObjeto.ESCUDOESPEJO)
+        $escudoBronce:EnumObjeto(this==EnumObjeto.ESCUDOBRONCE)
+        $dios:Inmortal(nombre==EnumPersonaje.HEFESTO.toString(),estado == EnumEstado.VIVO)
+        $p:Humano(estado == EnumEstado.VIVO,getFavores() contains $dios,getObjetos() contains $escudoBronce)
+    then
+        $p.getObjetos().add($escudoEspejo);
+        $p.getCapacidades().add($escudoEspejo.getCapacidad());
+        $p.getObjetos().remove($escudoBronce);
+        $p.getCapacidades().remove($escudoBronce.getCapacidad());
+
+        salida.add($p.getNombre()+" obtiene "+$escudoEspejo+" debido a tener el favor de Hefesto y el "+$escudoBronce);
+        salida.add($p.getNombre()+" obtiene la capacidad de "+$escudoEspejo.getCapacidad()+" debido a tener el " +$escudoEspejo);
+
+    update($p);
+end
+
+rule "Robar ojo de las grayas"
+	agenda-group "Mito"
+	salience 2
+    //include attributes such as "salience" here...
+    when
+       $grayas:Inmortal(nombre==EnumPersonaje.GRAYAS.toString(),estado == EnumEstado.VIVO)
+                        $ojo:EnumObjeto(this==OJOGRAYAS) from $grayas.getObjetos()
+       $p:Humano(estado == EnumEstado.VIVO, getObjetos() not contains $ojo, getCapacidades() contains EnumCapacidad.INVISIBILIDAD)
+
+       Inmortal(nombre == EnumPersonaje.ATENEA.toString()) from $p.getFavores()
+       Inmortal(nombre== EnumPersonaje.HERMES.toString()) from $p.getFavores()
+    then
+        //Perseo localiza a las Grayas debido a tener el favor de Hermes y Atenea
+        $p.getObjetos().add($ojo);
+        $p.getCapacidades().add($ojo.getCapacidad());
+
+        $grayas.getObjetos().remove($ojo);
+        $grayas.getCapacidades().remove($ojo.getCapacidad());
+
+        salida.add($p.getNombre() + " roba el " + $ojo + " debido a tener el favor de Atenea y " +
+              "Hermes y poseer la capacidad "+EnumCapacidad.INVISIBILIDAD );
+
+    update($p);
+    update($grayas)
+end
+
+
+rule "Encontrar Ninfas y devolver ojo Grayas"
+	agenda-group "Mito"
+	salience 2
+    //include attributes such as "salience" here...
+    when
+       $ninfas:Inmortal(nombre==EnumPersonaje.NINFAS.toString(),estado == EnumEstado.VIVO)
+       $p:Humano(estado == EnumEstado.VIVO,
+                             getFavores() not contains $ninfas)
+       $ojo:EnumObjeto(this==OJOGRAYAS) from $p.getObjetos()
+       $grayas:Inmortal(nombre==EnumPersonaje.GRAYAS.toString(),estado == EnumEstado.VIVO)
+
+    then
+        $p.getFavores().add($ninfas);
+        $grayas.getObjetos().add($ojo);
+        $grayas.getCapacidades().add($ojo.getCapacidad());
+
+        salida.add($p.getNombre() + " obtiene el favor de " + $ninfas.getNombre()+" debido a tener el " + $ojo );
+
+    update($p)
+    update($grayas);
+end
+
+

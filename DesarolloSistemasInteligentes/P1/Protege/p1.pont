@@ -1,0 +1,290 @@
+; Sun Nov 15 16:19:53 CET 2020
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(multislot Es_el_dios%2Fa_del
+		(type STRING)
+		(create-accessor read-write))
+	(multislot Es_hermano%2Fa_de
+		(type INSTANCE)
+;+		(allowed-classes Heroes Mujeres+Notables Inmortales)
+;+		(inverse-slot Es_hermano%2Fa_de)
+		(create-accessor read-write))
+	(single-slot Esta
+		(type SYMBOL)
+;+		(allowed-parents Estado)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Genero
+;+		(comment "El genero de la clase:\nSi es varón o hembra.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Es_hijo%2Fa_de
+;+		(comment "Si es hijo o hija de")
+		(type INSTANCE)
+;+		(allowed-classes Personajes+Mitologicos+Griegos)
+;+		(inverse-slot Es_el_progenitor_de)
+		(create-accessor read-write))
+	(multislot Es_el_progenitor_de
+;+		(comment "Si es el padre o la madre de")
+		(type INSTANCE)
+;+		(allowed-classes Personajes+Mitologicos+Griegos)
+;+		(inverse-slot Es_hijo%2Fa_de)
+		(create-accessor read-write))
+	(multislot Posee_Capacidad
+		(type SYMBOL)
+;+		(allowed-parents Capacidad)
+		(create-accessor read-write))
+	(single-slot Enfadar_a
+		(type INSTANCE)
+;+		(allowed-classes Personajes+Mitologicos+Griegos)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Propiedad
+		(type SYMBOL)
+;+		(allowed-parents Capacidad)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Estar_presa%2Fo_de
+		(type INSTANCE)
+;+		(allowed-classes Personajes+Mitologicos+Griegos)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Tiene_el_favor_de
+		(type INSTANCE)
+;+		(allowed-classes Inmortales)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Libera_a
+		(type INSTANCE)
+;+		(allowed-classes Personajes+Mitologicos+Griegos)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Matar_a
+		(type INSTANCE)
+;+		(allowed-classes Mortales)
+		(create-accessor read-write))
+	(multislot Posee_Objeto
+		(type INSTANCE)
+;+		(allowed-classes Objetos)
+		(create-accessor read-write))
+	(single-slot Es_el_rey%2Freina_de
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Es_el_conyuge_de
+		(type INSTANCE)
+;+		(allowed-classes Heroes Mujeres+Notables Inmortales)
+;+		(cardinality 0 1)
+;+		(inverse-slot Es_el_conyuge_de)
+		(create-accessor read-write)))
+
+(defclass Personajes+Mitologicos+Griegos "Todos los personajes mitologicos griegos"
+	(is-a USER)
+	(role abstract)
+	(single-slot Enfadar_a
+		(type INSTANCE)
+;+		(allowed-classes Personajes+Mitologicos+Griegos)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Estar_presa%2Fo_de
+		(type INSTANCE)
+;+		(allowed-classes Personajes+Mitologicos+Griegos)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Tiene_el_favor_de
+		(type INSTANCE)
+;+		(allowed-classes Inmortales)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Es_el_progenitor_de
+;+		(comment "Si es el padre o la madre de")
+		(type INSTANCE)
+;+		(allowed-classes Personajes+Mitologicos+Griegos)
+		(create-accessor read-write))
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Libera_a
+		(type INSTANCE)
+;+		(allowed-classes Personajes+Mitologicos+Griegos)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Matar_a
+		(type INSTANCE)
+;+		(allowed-classes Mortales)
+		(create-accessor read-write))
+	(multislot Es_hijo%2Fa_de
+;+		(comment "Si es hijo o hija de")
+		(type INSTANCE)
+;+		(allowed-classes Personajes+Mitologicos+Griegos)
+		(create-accessor read-write))
+	(single-slot Esta
+		(type SYMBOL)
+;+		(allowed-parents Estado)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot Posee_Objeto
+		(type INSTANCE)
+;+		(allowed-classes Objetos)
+		(create-accessor read-write))
+	(multislot Posee_Capacidad
+		(type SYMBOL)
+;+		(allowed-parents Capacidad)
+		(create-accessor read-write)))
+
+(defclass Inmortales
+	(is-a Personajes+Mitologicos+Griegos)
+	(role abstract)
+	(multislot Es_el_dios%2Fa_del
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot Genero
+;+		(comment "El genero de la clase:\nSi es varón o hembra.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Es_el_conyuge_de
+		(type INSTANCE)
+;+		(allowed-classes Heroes Mujeres+Notables Inmortales)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Deidades+Mayores
+	(is-a Inmortales)
+	(role concrete)
+	(multislot Es_hermano%2Fa_de
+		(type INSTANCE)
+;+		(allowed-classes Heroes Mujeres+Notables Inmortales)
+		(create-accessor read-write)))
+
+(defclass Deidades+Menores
+	(is-a Inmortales)
+	(role concrete)
+	(multislot Es_hermano%2Fa_de
+		(type INSTANCE)
+;+		(allowed-classes Heroes Mujeres+Notables Inmortales)
+		(create-accessor read-write)))
+
+(defclass Ninfas
+	(is-a Deidades+Menores)
+	(role concrete))
+
+(defclass Gorgonas
+	(is-a Deidades+Menores)
+	(role concrete))
+
+(defclass Mortales
+	(is-a Personajes+Mitologicos+Griegos)
+	(role abstract))
+
+(defclass Criaturas
+	(is-a Mortales)
+	(role concrete))
+
+(defclass Heroes
+	(is-a Mortales)
+	(role concrete)
+	(multislot Es_hermano%2Fa_de
+		(type INSTANCE)
+;+		(allowed-classes Heroes Mujeres+Notables Inmortales)
+		(create-accessor read-write))
+	(single-slot Es_el_conyuge_de
+		(type INSTANCE)
+;+		(allowed-classes Heroes Mujeres+Notables Inmortales)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Mujeres+Notables
+	(is-a Mortales)
+	(role concrete)
+	(multislot Es_hermano%2Fa_de
+		(type INSTANCE)
+;+		(allowed-classes Heroes Mujeres+Notables Inmortales)
+		(create-accessor read-write))
+	(single-slot Genero
+;+		(comment "El genero de la clase:\nSi es varón o hembra.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Es_el_conyuge_de
+		(type INSTANCE)
+;+		(allowed-classes Heroes Mujeres+Notables Inmortales)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Reyes
+	(is-a Mortales)
+	(role concrete))
+
+(defclass Objetos
+	(is-a USER)
+	(role abstract)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Propiedad
+		(type SYMBOL)
+;+		(allowed-parents Capacidad)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Normales
+	(is-a Objetos)
+	(role concrete))
+
+(defclass Legendarios
+	(is-a Objetos)
+	(role concrete))
+
+(defclass Estado
+	(is-a USER)
+	(role abstract))
+
+(defclass Vivo
+	(is-a Estado)
+	(role concrete))
+
+(defclass Muerto
+	(is-a Estado)
+	(role concrete))
+
+(defclass Prisionero
+	(is-a Estado)
+	(role concrete))
+
+(defclass Libre
+	(is-a Estado)
+	(role concrete))
+
+(defclass Capacidad
+	(is-a USER)
+	(role abstract))
+
+(defclass Volar
+	(is-a Capacidad)
+	(role concrete))
+
+(defclass Relfejo
+	(is-a Capacidad)
+	(role concrete))
+
+(defclass Invisibilidad
+	(is-a Capacidad)
+	(role concrete))
+
+(defclass Petrificar
+	(is-a Capacidad)
+	(role concrete))
+
+(defclass Resistencia
+	(is-a Capacidad)
+	(role concrete))
