@@ -1,0 +1,16 @@
+{
+  "name": "comparar",
+  "version": "1.0.0",
+  "description": "Un pequeño script en js para comparar las imagenes hace falta tener magick en el path https://imagemagick.org/script/command-line-processing.php",
+  "main": "Compara.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Compara.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "system-commands": "^1.1.7"
+  }
+}
