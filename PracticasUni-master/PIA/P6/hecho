@@ -1,0 +1,44 @@
+module Hecho where
+
+
+type Persona = String
+type Libro =  String
+
+type BD = [(Persona,Libro)]
+
+
+
+-- – Dada una persona, obtener los libros que tiene en prestamo (funcion libros).--
+libros :: BD -> Persona-> [Libro]
+libros bd per = [lib' | (per',lib') <- bd, per' == per]
+
+-- Dado un libro, obtener todos los lectores que lo tienen en prestamo (funcionlectores).
+lectores :: BD -> Libro -> [Persona]
+lectores bd lib = [per' | (per',lib') <- bd, lib' == lib]
+
+-- Dado un libro, obtener la informacion acerca de si esta o no prestado
+prestado :: BD -> Libro -> Bool
+prestado bd lib = (lectores bd lib) /= []
+
+-- Dada una persona, encontrar el numero de libros que tiene prestados
+numPrestados :: BD -> Persona -> Int
+numPrestados bd per = length prestados where 
+    prestados = [lib' | (per',lib') <- bd, per' == per]
+
+
+numPrestados2 :: BD -> Persona -> Int
+-- https://wiki.haskell.org/Pointfree
+-- esto es igual a lenght (libros bd) persona
+numPrestados2 bd = length.(libros bd)    
+
+
+-- Una para actualizar la BD con un nuevo prestamo (funcion realizarPrestamo).
+realizarPrestamo :: BD -> Persona -> Libro -> BD
+realizarPrestamo bd per libro = bd ++ [(per,libro)]
+
+-- Otra para actualizar la BD con una devolucion de libro (funcion devolverPrestamo).
+devolverPrestamo :: BD -> Persona -> Libro -> BD
+devolverPrestamo bd per libro = [(per',lib') | (per',lib') <-bd, libro /= lib']
+-- igfual a 
+devolverPrestamo' :: BD -> Persona -> Libro -> BD
+devolverPrestamo' bd per libro = [pres | pres <-bd, pres /= (per,libro)]

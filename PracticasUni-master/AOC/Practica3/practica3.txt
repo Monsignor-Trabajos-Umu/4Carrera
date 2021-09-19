@@ -1,0 +1,175 @@
+########################
+
+Cosas a tener en cuenta:
+
+########################
+
+- Se modifica la configuracion del simulador desde el fichero "ejecuta".
+- Para guardar el fichero con un nombre distinto usamos $: TEST_ID=nombreFichero ./ejecuta
+- Siempre se hace el siguiente ejercicio partiendo de la mejor configuracion del ejercicio anterior.
+
+- bpp = bloques por proceso
+- n = numero filas
+- fpb = filas por bloque
+
+*****************************************************************************************************
+*****************************************************************************************************
+
+EJERCICIO 1
+
+	El comportamiento de esta versión multicore es el siguiente: la matriz de temperaturas de n filas se divide en bloques de fpb filas y los procesos se reparten el trabajo actualizando cada uno un cierto número de bloques (bpp). Así, el número de bloques que actualiza cada proceso se calcula a partir del numero de filas de la matriz, el número de filas que componen un bloque y el número de procesos que se utilizarán siguiendo la siguiente fórmula: bpp = n/(fpb*number_of_processes).
+
+	Se garantiza que esta ejecución obtiene los mismos resultados que la ejecución del programa no paralizado gracias al uso de cerrojos y barreras de la siguiente forma: antes de entrar al bucle principal del procedimiento solve() los procesos tienen que obtener su pid, para lo que se utiliza un cerrojo dado que se modificará una variable global, y esperar a que al resto de procesos se le haya asignado su pid, para lo que se utiliza una barrera. Una vez todos los procesos tienen su pid, realizan los calculos de temperaturas para sus respectivos bloques y actualizan la diferencia global si la suya local es superior (para esta actualización también se hace uso de cerrojos, pues se actualiza la diferencia global, una sección crítica). En cuanto los procesos hayan realizado esto último (para lo que se utiliza otra barrera) el proceso 0 comprueba, mientras el resto espera en una barrera, si la diferencia global es mayor que la tolerancia, en cuyo caso se termina la ejecución y de lo contrario seguiría el bucle.
+
+EJERCICIO 2
+
+ 	Como hemos explicado anteriormente, en esta implementación se divide la matriz de temperaturas en bloques, y cada proceso actualizará un determinado número de bloques en lugar de hacer los cálculos de toda la matriz. Cada bloque está formado por un cierto número de filas de la matriz de temperaturas. A este número de filas que componen cada bloque se le denomina fpb (filas por bloque).
+ 	Dada la implementación, cuanto mayor sea el fpb, más aprovecharemos la localidad espacial, lo cuál podría llevarnos a concluir que a mayor fpb mejor. Sin embargo, un fpb muy alto aumentará el número de colisiones en la caché, repercutiendo negativamente en el tiempo de ejecución y, por ende, en el rendimiento. Así, debemos optar por una solución de compromiso, buscando el término medio para el valor de fpb.
+
+    AssociateAddrNode se utiliza para asignar el nodo home de la caché a un determinado rango de memoria pasado por parámetro. En esta implementación se utiliza para designar el nodo home de las matrices A y B tratando de aprovechar la localidad espacial.
+
+
+EJERCICIO 3
+
+	Con esta configuración, contando con que no modificamos los bordes, tenemos que:
+		bpp = 2; fpb = 1; n = 4;
+	Así, para cada hilo el primer for ejecutará 2 iteraciones, el segundo 1 iteración y el tercero 4.
+
+	Dado que estudiaremos solo fallos de caché en la iteración k-esima con k > 2, las primeras 3 iteraciones del último for no serán tenidas en cuenta:
+
+	En cada núcleo se hacen 7 accesos de memoria por cada iteración del tercer for (el único en que se accede a memoria). Dado que se utilizan bloques de 8 bytes (del tamaño de un double) y se leen y escriben doubles, no se aprovecha en absoluto la localidad espacial (dado que solo se traerá a caché el bloque que ha producido el fallo), con lo que los primeros 6 accesos resultan en fallos en frío. Sin embargo, el séptimo resulta en acierto, pues al ser la caché totalmente asociativa, el bloque que contiene A[i + row_offset][j] está en caché.
+	De esta forma, tenemos 6 fallos en frío por cada iteración del tercer for.
+	Además, el algoritmo hace que los hilos se repartan las filas de forma que la fila 0 la realiza el hilo 0, la fila 1 el hilo 1, la fila 2 el hilo 0, la fila 3 el hilo 1 y así sucesivamente. Así, cada vez que un hilo accede a una fila del otro hilo para actualizar los valores de las casillas de la fila de la que se encarga, se producirán 8 fallos de coherencia.
+
+	Por tanto, tenemos que en la iteración k-esima se producen 6 fallos en frío y 8 fallos de coherencia por cada núcleo, resultando en 14 fallos de caché L2 por núcleo.
+
+EJERCICIO 4
+
+	Al utilizar únicamente un hilo, el valor óptimo para el fpb sería el máximo posible, es decir, el número de filas de la matriz, ya que el valor óptimo para el fpb viene dado por el número de filas dividido entre el número de procesos.
+
+	1 fpb -> 119.968.324,5 ciclos
+
+	8 fpb -> 119.829.526,5 ciclos
+	
+	64 fpb -> 119.802.019 ciclos
+
+EJERCICIO 5
+
+	Tiempo de ejecución simulado: 92.500.000 ciclos
+
+	Speedup = (119.802.019/92.500.000 - 1) * 100 = 29,5156 %
+
+
+	FALLOS L2
+
+	A continuación se muestran los datos de las estadísticas obtenidas con la ejecución del programa con 1 hilo y 64 fpb (la mejor configuración del ejercicio anterior) y con 2 hilos y 1 fpb:
+
+	
+	1 hilo y 64 fpb
+	---------------
+
+	Número total de fallos: 911.999
+
+	Fallos de lectura: 
+
+		Fallos en frío: 1.175
+		Fallos de conflicto: 92.449
+		Fallos de capacidad: 406.353
+		Fallos de coherencia: 0
+		Fallos de actualizacion: 0 
+
+	Fallos de escritura: 
+
+		Fallos en frío: 1.088
+		Fallos de conflicto: 0
+		Fallos de capacidad: 410.176
+		Fallos de coherencia: 0
+		Fallos de actualizacion: 379
+
+
+	2 hilos y 1 fpb
+	-----------------
+
+	Número total de fallos: 432.663
+
+	Fallos de lectura: 
+
+		Fallos en frío: 1.685
+		Fallos de conflicto: 1.885	
+		Fallos de capacidad: 218.099
+		Fallos de coherencia: 1.960
+		Fallos de actualizacion: 0
+	
+	Fallos de escritura: 
+
+		Fallos en frío: 544
+		Fallos de conflicto: 0
+		Fallos de capacidad: 205.088
+		Fallos de coherencia: 0
+		Fallos de actualizacion: 2.645
+
+
+	Los resultados evidencian que se producen menos de la mitad de fallos de L2 usando 2 hilos y un fpb de 1. Aunque tener dos hilos provoca que tengamos fallos de coherencia en las lecturas (algo que no ocurre con un hilo), los fallos de capacidad tanto en lecturas como escritura se reducen a casi la mitad, y teniendo en cuenta que estos últimos son mucho más abundantes que los anteriores, el balance general es muy positivo. 
+
+EJERCICIO 6
+
+	El valor óptimo para el fpb sería 32, ya que el valor óptimo para el fpb viene dado por el número de filas dividido entre el número de procesos: 64/2 = 32.
+
+	Tiempo de ejecución simulado: 52.841.546 ciclos
+
+	Speedup = (92.500.000/52.841.546 - 1) * 100 = 102,2671 %
+
+
+	FALLOS L2
+
+	A continuación se muestran los datos de las estadísticas obtenidas con la ejecución del programa con 2 hilos y 1 fpb (la mejor configuración del ejercicio anterior) y con 2 hilos y 32 fpb:
+
+	
+	2 hilos y 1 fpb
+	-----------------
+
+	Número total de fallos: 432.663
+
+	Fallos de lectura: 
+
+		Fallos en frío: 1.685
+		Fallos de conflicto: 1.885	
+		Fallos de capacidad: 218.099
+		Fallos de coherencia: 1.960
+		Fallos de actualizacion: 0
+	
+	Fallos de escritura: 
+
+		Fallos en frío: 544
+		Fallos de conflicto: 0
+		Fallos de capacidad: 205.088
+		Fallos de coherencia: 0
+		Fallos de actualizacion: 2.645
+
+
+	2 hilos y 32 fpb
+	---------------
+
+	Número total de fallos: 122.178
+
+	Fallos de lectura: 
+
+		Fallos en frío: 623
+		Fallos de conflicto: 55.789
+		Fallos de capacidad: 22
+		Fallos de coherencia: 1.894
+		Fallos de actualizacion: 0 
+
+	Fallos de escritura: 
+
+		Fallos en frío: 544
+		Fallos de conflicto: 57.121
+		Fallos de capacidad: 177
+		Fallos de coherencia: 0
+		Fallos de actualizacion: 5.251
+
+	Los resultados evidencian que, con un fpb de 32 se producen poco más de un cuarto de los fallos de L2 de los que ocurrían con un fpb de 1. Observamos que los fallos de capacidad se reducen muchísimo (más de un 800% en las lecturas) y los fallos de coherencia se ven ligeramente reducidos. Pese a que aumentan los fallos de conflicto en un 2.859,62% en las lecturas, estos son lo suficientemente comedidos como para que el balance general siga siendo muy positivo.
+
+
+EJERCICIO 7
+

@@ -1,0 +1,15 @@
+Material para la realización de la práctica 3 de la asignatura "Arquitectura y
+Organización de Computadores":
+
+* Subdirectorio "execs": contiene los ejecutables del simulador y la
+aplicación, además de un script "ejecuta" que muestra cómo realizar una
+simulación.
+
+* Subdirectorio "src": código fuente de la aplicación.
+
+* Subdirectorio "outputs": ficheros con las estadísticas resultantes de las
+distintas simulaciones.
+
+* Subdirectorio "scripts": contiene el script "pstat" necesario en algunos
+de los ejercicios de las prácticas.
+

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/AEd2_Practicas.dir/main.cpp.o CMakeFiles/AEd2_Practicas.dir/funciones/Directa.cpp.o CMakeFiles/AEd2_Practicas.dir/funciones/Consonate_o_vocal.cpp.o CMakeFiles/AEd2_Practicas.dir/funciones/dividir_juntar.cpp.o  -o AEd2_Practicas 

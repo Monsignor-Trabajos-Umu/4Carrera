@@ -1,0 +1,237 @@
+
+########################
+
+Cosas a tener en cuenta:
+
+########################
+
+- Se modifica la configuracion del simulador desde el fichero "ejecuta".
+- La caché L1 se llama cache0 en stats y la L2 cache2.	
+- Para guardar el fichero con un nombre distinto usamos $: TEST_ID=nombreFichero ./ejecuta
+- Siempre se hace el siguiente ejercicio partiendo de la mejor configuracion del ejercicio anterior.
+
+
+*****************************************************************************************************
+*****************************************************************************************************
+
+
+EJERCICIO 4:
+
+- Con caché L1 de escritura directa tenemos 8605337 aciertos (83% de tasa de acierto) y 1780696 fallos
+
+EJERCICIO 5:
+
+- L2 16 KB: Tiempo de ejecución de 2.34394e+08 ciclos ; 255537 aciertos, 463380 fallos -> tasa de acierto L2 del 36 %
+- L2 32 KB: Tiempo de ejecución de 1.68027e+08 ciclos ; 352053 aciertos, 349425 fallos -> tasa de acierto L2 del 50 %
+- L2 64 KB: Tiempo de ejecución de 2.34956e+07 ciclos ; 654216 aciertos, 9315 fallos -> tasa de acierto L2 del 99 %
+
+EJERCICIO 6:
+
+- L1 4 KB: Tiempo de ejecución de 2.34956e+07 ciclos ; 9500085 aciertos, 663530 fallos -> tasa de acierto L1 del 93 %
+⁻ L1 8 KB: Tiempo de ejecución de 2.29818e+07 ciclos ; 9584840 aciertos, 579280 fallos -> tasa de acierto L1 del 94 %
+- L1 16 KB: Tiempo de ejecución de 2.37462e+07 ciclos ; 9733626 aciertos, 430663 fallos -> tasa de acierto L1 del 96 %
+
+EJERCICIO 7:
+
+- ROB 16 entradas: Instrucciones confirmadas: 18908478 ; Instrucciones emitidas: 18987216 ; Tiempo de ejecución: 22928503 ciclos; -> IPC: 18908478/22928503 = 0,8246 ; TFE = (18987216-18908478)/18987216 = 0,0041
+
+- ROB 32 entradas: Instrucciones confirmadas: 18908478 ; Instrucciones emitidas: 19089291 ; Tiempo de ejecución: 19903158 ciclos; -> IPC: 18908478/19903158 = 0,95 ; TFE = (19089291-18908478)/19089291 = 0,0094 -> Speedup respecto a ROB_16: 15,2% ; Análisis TFE: 129,26% peor que ROB_16
+
+- ROB 64 entradas: Instrucciones confirmadas: 18908478 ; Instrucciones emitidas: 19255824 ; Tiempo de ejecución: 16362349 ciclos; -> IPC: 18908478/16362349 = 1,1556 ; TFE = (19255824-18908478)/19255824 = 0,01803 -> Speedup respecto a ROB_16: 40,14% ; Análisis TFE: 339,75% peor que ROB_16
+
+EJERCICIO 8:
+
+- 2 instrucciones/ciclo: 
+    Instrucciones confirmadas: 18908478 ;
+    Instrucciones emitidas: 19255824 ; 
+    Tiempo de ejecución: 16362349 ciclos; 
+    IPC: 18908478/16362349 = 1,155609014 ; 
+    TFE = (19255824-18908478)/19255824 = 0,01803
+
+- 4 instrucciones/ciclo: 
+    Instrucciones confirmadas: 18908478 ; 
+    Instrucciones emitidas: 20135440 ; 
+    Tiempo de ejecución: 15060398 ciclos;
+    IPC: 18908478/15060398 = 1,255509848 ;
+    TFE = (20135440-18908478)/20135440 = 0,060935445 -> Speedup respecto a 2: 8,644% ;
+	Análisis TFE: 237,807% peor que 2
+
+- 8 instrucciones/ciclo: Instrucciones confirmadas: 18908478 ;
+	 Instrucciones emitidas: 22462608 ;
+	 Tiempo de ejecución: 16227814 ciclos;
+	 IPC: 18908478/16227814 = 1,16518947 ;
+	 TFE = (22462608-18908478)/22462608 = 0,158224281 -> Speedup respecto a 2: 0,829%;
+	 Análisis TFE: 777,148% peor que 2
+
+EJERCICIO 9:
+
+- x2 ALUs: Instrucciones confirmadas: 18908478 ;
+	 Instrucciones emitidas: 19993844 ;
+	 Tiempo de ejecución: 14969389 ciclos;
+	 IPC: 18908478/14969389 = 1,263142938 ;
+	 TFE = (19993844-18908478)/19993844 = 0,054285009 -> Speedup respecto al mejor del ejercicio 8: 0,607%
+	 Análisis TFE: 12,25% mejor que el mejor del ejercicio 8 
+
+- x2 FPUs: Instrucciones confirmadas: 18908478 ;
+	 Instrucciones emitidas: 20129600 ;
+	 Tiempo de ejecución: 15058904 ciclos;
+	 IPC: 18908478/15058904 = 1,255634407 ;
+	 TFE = (20129600-18908478)/20129600 = 0,060663004 -> Speedup respecto al mejor del ejercicio 8: 0,0099% ;
+	 Análisis TFE: 0,449% mejor que el mejor del ejercicio 8 
+
+- x2 ADDRs: Instrucciones confirmadas: 18908478 ;
+	 Instrucciones emitidas: 20156201 ;
+	 Tiempo de ejecución: 13762782 ciclos;
+	 IPC: 18908478/13762782 = 1,373884873 ;
+	 TFE = (20156201-18908478)/20156201 = 0,061902687 -> Speedup respecto al mejor del ejercicio 8: 9,428% ;
+	 Análisis TFE: 1,578% peor que el mejor del ejercicio 8
+
+EJERCICIO 10:
+(ya configurado en el ejecuta, solo hay que runnear el archivo y ver los datos)
+
+- Predictor 2bitagree 64 contadores: Instrucciones confirmadas: 18908478 ;
+	 Instrucciones emitidas: 19305493 ;
+	 Tiempo de ejecución: 13635393 ciclos;
+	 IPC: 18908478/13635393 = 1,386720427 ;
+	 TFE = (19305493-18908478)/19305493 = 0,020564872
+	 Speedup respecto al mejor del ejercicio 9: 0,934%
+	 Análisis TFE: 1,578% peor que el mejor del ejercicio 9
+
+EJERCICIO 11: Dada la siguiente relación de costes por cambio respecto a la configuración inicial, calcula el coste que
+tendría cada configuración propuesta en los bloques II y III:
+
+    Aumentar el tamaño de la L1: 3000 C al pasar de 4 KiB a 8 KiB y 6000 C al pasar de 8 KiB a 16 KiB.
+	Aumentar el tamaño de la L2: 3000 C al pasar de 16 KiB a 32 KiB y 3000 C al pasar de 32 KiB a 64KiB.
+	Cambiar la política de escritura directa por la de postescritura en la L1 tiene un coste de 1000 C.
+	Aumentar el grado de emisión del procesador: 1000 C al pasar de 2 a 4 y 3000 C al pasar de 4 a 8.
+	Mejorar la predicción de saltos: usar el 2bitagree con 64 entradas cuesta 1000 C.
+	Aumentar el tamaño del buffer de reordenación: 2000 C al pasar de 16 a 32, 2000 C al pasar de 32 a 64.
+	Añadir una unidad funcional: 1000 C (independientemente del tipo de la unidad funcional).
+
+	Configuracion Incial
+
+	numnodes 1
+	bpbtype static
+	numalus 1 
+	numfpus 1 
+	numaddrs 1  
+	linesize 32 
+	l1type WB
+	l1size 4  
+	l1assoc 2 
+	l1taglatency 2 
+	l2size 16 
+	l2assoc 2 
+	l2taglatency 9
+	l2datalatency 2
+	memorylatency 300 
+	STOPCONFIG 1
+
+    IPC = 0,080688133
+
+    Precio 0$
+
+
+	4. La cache L1 se podría hacer de escritura directa en lugar de postescritura. Explica la diferencia y
+	comprueba qué efecto tiene esta decisión en el rendimiento.
+
+	Precio = 1000$
+
+    IPC = 0,07764261
+
+
+
+    5. Estudia la influencia de los parámetros de diseño de la cache L2. Supongamos que podemos aumentar
+    el tamaño de la L2 sin afectar al tiempo de acierto. En concreto, probaremos con cachés de 16 KiB,
+    32 KiB y 64 KiB. Explica los resultados obtenidos teniendo en cuenta los tamaños de las estructuras
+    de datos de la aplicación.
+
+
+    l2size 16       --------->  l2size 32 --------->  l2size 64
+
+
+    Precio  0 $                Precio 3k€              Precio 6k€
+
+    IPC = 0,080688133          0,112568205             0,806597122       
+
+
+    
+    6. Continuando con la caché L1, probaremos con tamaños de 4 KiB, 8 KiB y 16 KiB, pero teniendo en
+    cuenta que el tiempo de acierto aumenta en 1 ciclo en el caso de 16 KiB. Hay que tener en cuenta
+    que el tamaño de la L1 debe ser siempre menor que el de la L2. Explica los resultados obtenidos
+    considerando los tamaños de las estructuras de datos que la aplicación va a manejar.
+
+
+
+
+    l1size 4       --------->  l1size 8 --------->  l1size 16
+
+
+    Precio 6k€                 Precio 9k€           Precio 15k€
+
+    IPC = 0,806597122          0,824671284          0,080688133     
+
+    
+    7. Analiza la influencia del tamaño del buffer de reordenación (Active List). Los tamaños que vamos a
+    probar para este recurso son: 16, 32 y 64 entradas. ¿Qué conclusiones obtienes? ¿Crees que podría
+    mejorarse algo más si utilizáramos un tamaño aún mayor? Explica la respuesta.
+
+
+    Active List 16       --------->  Active List 32 --------->  Active List 64
+
+
+    Precio 9k€                       Precio 11k€                Precio 13k€
+
+    IPC = 0,824671284                0,95                       1,1556     
+
+
+
+    8. Estudia la influencia del número de instrucciones emitidas por ciclo. Puede tomar los valores 2, 4 y 8.
+    Explica los resultados obtenidos.
+
+    In Ciclo 2       --------->  In Ciclo 4 --------->   In Ciclo 8
+
+
+    Precio 13k€                  Precio 14k€             Precio 17k€
+
+    IPC = 1,155609014            1,255509848             1,16518947    
+
+
+    9. Estudia la influencia del número de unidades funcionales. Concretamente, y por separado, analiza
+    cómo varía el comportamiento del programa al doblar el número de ALUs, el número de FPUs y el
+    número de unidades de generación de direcciones. Explica los resultados obtenidos
+
+
+    2 ALUs       --------->     2 FPUs      --------->   UGD
+
+
+    Precio 15k€                  Precio 15k€             Precio 15k€
+
+    IPC = 1,263142938            1,255634407             1,373884873
+
+
+    10. Evalúa el predictor de saltos. Tomando la mejor configuración del apartado anterior, analiza cómo in-
+    fluye en el rendimiento el cambiar el esquema de predicción a 2bitagree con 64 contadores (parámetro
+    de configuración bpbsize). Explica los resultados obtenidos.
+
+
+    64 Contadores
+
+    Precio 16k€
+
+    IPC = 1,386720427
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

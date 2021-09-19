@@ -1,0 +1,13 @@
+Material para la realización de la práctica 2 de la asignatura "Arquitectura
+y Organización de Computadores":
+
+* Subdirectorio "execs": contiene los ejecutables del simulador y la
+aplicación, además de un script "ejecuta" que muestra cómo realizar una
+simulación.
+
+* Subdirectorio "src": código fuente de la aplicación.
+
+* Subdirectorio "outputs": ficheros con las estadísticas resultantes de las
+distintas simulaciones.
+
+* Subdirectorio "rsim-docs": Documentación del simulador RSIM (manual). 

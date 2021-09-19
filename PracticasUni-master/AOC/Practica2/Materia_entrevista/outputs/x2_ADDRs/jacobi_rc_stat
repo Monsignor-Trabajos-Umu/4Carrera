@@ -1,0 +1,834 @@
+
+Network Parameters:
+Uniprocessor system -- no network to speak of!
+
+
+Primary Cache Size 8KB, Line Size: 32B, Set Size: 2, Coherence: PR_WB, Adaptive: FALSE
+
+
+Secondary Cache Size 64KB, Line Size: 32B, Set Size: 2, Coherence: WB_NREF, Adaptive: FALSE
+PROCESSOR 0 Phase 1 STATISTICS: 
+Start cycle: 50893		icount: 124023
+End cycle: 13813675		icount: 20280224
+
+Statistics Record Active list size:
+   Number of samples = 13696137,   Max Value = 64,   Min Value = 1
+   Sampling interval = 1.37628e+07,   Sampling rate = 0.995158
+   Mean = 63.6474,   Standard Deviation = 3.19571
+      Bin         Value
+      ---         -----
+       -       0.000 ( 0.00%) |
+     0.000    8052.000 ( 0.06%) |
+     8.000    15165.000 ( 0.11%) |
+    16.000    12994.000 ( 0.09%) |
+    24.000    10705.000 ( 0.08%) |
+    32.000    13927.000 ( 0.10%) |
+    40.000    16537.000 ( 0.12%) |
+    48.000    60160.000 ( 0.44%) |
+    56.000    687500.000 ( 5.02%) |**
+    64.000    12871097.000 (93.98%) |**********************************************
+End of Report
+
+
+Statistics Record Speculation level:
+   Number of samples = 13696137,   Max Value = 8,   Min Value = 0
+   Sampling interval = 1.37628e+07,   Sampling rate = 0.995158
+   Mean = 0.302642,   Standard Deviation = 0.503078
+End of Report
+
+
+Statistics Record Mem queue size:
+   Number of samples = 13696137,   Max Value = 32,   Min Value = 0
+   Sampling interval = 1.37628e+07,   Sampling rate = 0.995158
+   Mean = 28.962,   Standard Deviation = 3.9618
+      Bin         Value
+      ---         -----
+       -       0.000 ( 0.00%) |
+     0.000    30064.000 ( 0.22%) |
+     8.000    32362.000 ( 0.24%) |
+    16.000    1404297.000 (10.25%) |*****
+    24.000    9737376.000 (71.10%) |***********************************
+    32.000    2492038.000 (18.20%) |*********
+End of Report
+
+BPB Good predictions: 748099, BPB Bad predictions: 741383, BPB Prediction rate: 0.502254
+RAS Good predictions: 3930, RAS Bad predictions: 261, RAS Prediction rate: 0.937724
+Loads issued: 8821581, speced: 1542806, limbos: 829082, unlimbos: 828961, redos: 24, kills: 24
+Memory unit fwds: 0, Virtual store buffer fwds: 0 Partial overlaps: 7242
+
+Statistics Record Bad prediction flushes:
+   Number of samples = 741144,   Max Value = 62,   Min Value = 0
+   Sampling interval = 1.37628e+07,   Sampling rate = 0.0538514
+   Mean = 1.2646,   Standard Deviation = 1.71155
+End of Report
+
+Exceptions: 4792
+Soft Exceptions: 4730
+SL Soft Exceptions: 4730
+SL Soft Exceptions (replacements): 4730
+SL Footnote 5 occurences: 0
+Window overflows: 2 underflows: 1
+Cycles since last graduation: 1
+
+Statistics Record Exception flushes:
+   Number of samples = 4792,   Max Value = 63,   Min Value = 5
+   Sampling interval = 1.37628e+07,   Sampling rate = 0.000348185
+   Mean = 61.0787,   Standard Deviation = 4.05816
+End of Report
+
+ALU utilization: 43.7%
+FPU utilization: 26.6%
+Addr. gen. utilization: 35.1%
+
+Statistics Record Waiting for exceptions:
+   Number of samples = 62,   Max Value = 0,   Min Value = 0
+   Sampling interval = 1.37628e+07,   Sampling rate = 4.5049e-06
+   Mean = 0,   Standard Deviation = 0
+End of Report
+
+Demand read UNKNOWN -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read L1HIT -- Num 8109139(0.920,0.850) Mean 9.215/3.135/3.001 Stddev 37.666/3.690/0.558
+Demand read L1COAL -- Num 377023(0.043,0.039) Mean 60.912/45.498/45.487 Stddev 173.710/140.615/140.597
+Demand read WBCOAL -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read L2HIT -- Num 318981(0.036,0.033) Mean 26.855/17.051/17.014 Stddev 53.537/1.505/1.494
+Demand read L2COAL -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read DIR_LH_NOCOHE -- Num 7707(0.001,0.001) Mean 750.606/559.789/559.715 Stddev 336.335/124.507/124.018
+Demand read DIR_LH_RCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read DIR_RH_NOCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read DIR_RH_LCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read DIR_RH_RCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read CACHE_TO_CACHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write UNKNOWN -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write L1HIT -- Num 724015(0.989,0.076) Mean 39.863/33.053/3.006 Stddev 69.029/51.956/1.827
+Demand write L1COAL -- Num 7124(0.010,0.001) Mean 123.689/80.511/57.890 Stddev 266.700/169.704/151.914
+Demand write WBCOAL -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write L2HIT -- Num 893(0.001,0.000) Mean 56.226/49.781/17.000 Stddev 19.862/19.766/0.000
+Demand write L2COAL -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write DIR_LH_NOCOHE -- Num 202(0.000,0.000) Mean 1248.178/1243.163/633.881 Stddev 30.490/30.438/1.359
+Demand write DIR_LH_RCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write DIR_RH_NOCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write DIR_RH_LCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write DIR_RH_RCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write CACHE_TO_CACHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw UNKNOWN -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw L1HIT -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw L1COAL -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw WBCOAL -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw L2HIT -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw L2COAL -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw DIR_LH_NOCOHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw DIR_LH_RCOHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw DIR_RH_NOCOHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw DIR_RH_LCOHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw DIR_RH_RCOHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw CACHE_TO_CACHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Pref sh UNKNOWN -- Num 0 Mean nan Stddev nan
+Pref sh L1HIT -- Num 19 Mean 3.000 Stddev 0.000
+Pref sh L1COAL -- Num 0 Mean nan Stddev nan
+Pref sh WBCOAL -- Num 0 Mean nan Stddev nan
+Pref sh L2HIT -- Num 0 Mean nan Stddev nan
+Pref sh L2COAL -- Num 0 Mean nan Stddev nan
+Pref sh DIR_LH_NOCOHE -- Num 0 Mean nan Stddev nan
+Pref sh DIR_LH_RCOHE -- Num 0 Mean nan Stddev nan
+Pref sh DIR_RH_NOCOHE -- Num 0 Mean nan Stddev nan
+Pref sh DIR_RH_LCOHE -- Num 0 Mean nan Stddev nan
+Pref sh DIR_RH_RCOHE -- Num 0 Mean nan Stddev nan
+Pref sh CACHE_TO_CACHE -- Num 0 Mean nan Stddev nan
+Pref excl UNKNOWN -- Num 0 Mean nan Stddev nan
+Pref excl L1HIT -- Num 387239 Mean 3.052 Stddev 5.716
+Pref excl L1COAL -- Num 0 Mean nan Stddev nan
+Pref excl WBCOAL -- Num 0 Mean nan Stddev nan
+Pref excl L2HIT -- Num 194117 Mean 17.066 Stddev 0.310
+Pref excl L2COAL -- Num 0 Mean nan Stddev nan
+Pref excl DIR_LH_NOCOHE -- Num 2262 Mean 394.432 Stddev 130.404
+Pref excl DIR_LH_RCOHE -- Num 0 Mean nan Stddev nan
+Pref excl DIR_RH_NOCOHE -- Num 0 Mean nan Stddev nan
+Pref excl DIR_RH_LCOHE -- Num 0 Mean nan Stddev nan
+Pref excl DIR_RH_RCOHE -- Num 0 Mean nan Stddev nan
+Pref excl CACHE_TO_CACHE -- Num 0 Mean nan Stddev nan
+
+Avail loss from ALU time: 0.001
+Avail loss from User 1 time: 0.000
+Avail loss from User 2 time: 0.000
+Avail loss from User 3 time: 0.000
+Avail loss from User 4 time: 0.000
+Avail loss from User 5 time: 0.000
+Avail loss from User 6 time: 0.000
+Avail loss from User 7 time: 0.000
+Avail loss from User 8 time: 0.000
+Avail loss from User 9 time: 0.000
+Avail loss from Barrier time: 0.000
+Avail loss from Spin time: 0.000
+Avail loss from Acquire time: 0.000
+Avail loss from Release time: 0.000
+Avail loss from RMW time: 0.000
+Avail loss from Write time: 0.165
+Avail loss from Read time: 0.328
+Avail loss from Branch time: 0.000
+Avail loss from FPU time: 0.133
+Avail loss from Except time: 0.000
+Avail loss from MEMBAR time: 0.000
+Avail loss from BUSY TIME: 0.000
+Avail loss from Read miss time: 0.000
+Avail loss from Write miss time: 0.000
+Avail loss from RMW miss time: 0.000
+Avail loss from Read L1 time: 0.000
+Avail loss from Read L2 time: 0.000
+Avail loss from Read localmem time: 0.000
+Avail loss from Read remotemem time: 0.000
+Avail loss from Write L1 time: 0.000
+Avail loss from Write L2 time: 0.000
+Avail loss from Write localmem time: 0.000
+Avail loss from Write remotemem time: 0.000
+Avail loss from RMW L1 time: 0.000
+Avail loss from RMW L2 time: 0.000
+Avail loss from RMW localmem time: 0.000
+Avail loss from RMW remotemem time: 0.000
+Avail loss from RMW Late PF time: 0.000
+Avail loss from Write Late PF time: 0.000
+Avail loss from Read Late PF time: 0.000
+
+Efficiency loss from OK: 0.000
+Efficiency loss from Branch in cycle: 0.005
+Efficiency loss from Unpredicted branch: 0.001
+Efficiency loss from Shadow mappers full: 0.001
+Efficiency loss from Rename registers full: 0.000
+Efficiency loss from Memory queue full: 0.000
+Efficiency loss from Issue queue full: 0.000
+
+Utility losses from misspecs: 0.046 excepts: 0.015
+
+
+
+
+TIME FOR EXECUTION:	1.38137e+07
+
+##### Cache Statistics #####
+
+Name          Num_Ref          Num_Hit;Hit_Rate   Miss_latency     Utilization
+cache0      10128731          9604564(   95%)          0             0.6256
+Num_hit: 9604564  Num_miss: 524167 Num_lat: 0
+DEMAND READ	CACHE_HIT: 8109139  (0.920,0.801)
+DEMAND READ	CACHE_MISS_COLD: 1081     (0.000,0.000)
+DEMAND READ	CACHE_MISS_CONF: 125613   (0.014,0.012)
+DEMAND READ	CACHE_MISS_CAP: 199996   (0.023,0.020)
+DEMAND READ	CACHE_MISS_COHE: 0        (0.000,0.000)
+DEMAND READ	CACHE_MISS_UPGR: 0        (0.000,0.000)
+DEMAND READ	CACHE_MISS_WT: 0        (0.000,0.000)
+DEMAND READ	CACHE_MISS_COAL: 377023   (0.043,0.037)
+DEMAND WRITE	CACHE_HIT: 724016   (0.989,0.071)
+DEMAND WRITE	CACHE_MISS_COLD: 0        (0.000,0.000)
+DEMAND WRITE	CACHE_MISS_CONF: 1094     (0.001,0.000)
+DEMAND WRITE	CACHE_MISS_CAP: 1        (0.000,0.000)
+DEMAND WRITE	CACHE_MISS_COHE: 0        (0.000,0.000)
+DEMAND WRITE	CACHE_MISS_UPGR: 0        (0.000,0.000)
+DEMAND WRITE	CACHE_MISS_WT: 0        (0.000,0.000)
+DEMAND WRITE	CACHE_MISS_COAL: 7125     (0.010,0.001)
+DEMAND RMW	CACHE_HIT: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_COLD: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_CONF: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_CAP: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_COHE: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_UPGR: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_WT: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_COAL: 0        (nan,0.000)
+PREF   L1WRITE_PREFETCH	CACHE_HIT: 387242   (0.664,0.038)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_COLD: 1047     (0.002,0.000)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_CONF: 4495     (0.008,0.000)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_CAP: 190840   (0.327,0.019)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_COHE: 0        (0.000,0.000)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_UPGR: 0        (0.000,0.000)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_WT: 0        (0.000,0.000)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_COAL: 0        (0.000,0.000)
+PREF   L1READ_PREFETCH	CACHE_HIT: 19       (1.000,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_COLD: 0        (0.000,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_CONF: 0        (0.000,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_CAP: 0        (0.000,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_COHE: 0        (0.000,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_UPGR: 0        (0.000,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_WT: 0        (0.000,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_COAL: 0        (0.000,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_HIT: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_COLD: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_CONF: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_CAP: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_COHE: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_UPGR: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_WT: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_COAL: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_HIT: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_COLD: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_CONF: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_CAP: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_COHE: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_UPGR: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_WT: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_COAL: 0        (nan,0.000)
+DEMAND network miss READ	: 0 @ nan [stddev nan]
+DEMAND network miss WRITE	: 0 @ nan [stddev nan]
+DEMAND network miss RMW	: 0 @ nan [stddev nan]
+PREF network miss L1WRITE_PREFETCH	: 0 @ nan [stddev nan]
+PREF network miss L1READ_PREFETCH	: 0 @ nan [stddev nan]
+PREF network miss L2WRITE_PREFETCH	: 0 @ nan [stddev nan]
+PREF network miss L2READ_PREFETCH	: 0 @ nan [stddev nan]
+
+Mean MSHR occupancy: 0.906 [stddev 0.688]
+
+Statistics Record Mshr occupancy:
+   Number of intervals = 1236930, Max Value = 8, Min Value = 0
+   Sampling interval = 1.38135e+07,   Sampling rate = 0.0895448
+   Mean = 0.906022,   Standard Deviation = 0.688092
+      Bin         Value
+      ---         -----
+       -       0.000 ( 0.00%) |
+     0.000    3483144.000 (25.22%) |************
+     1.000    8525723.000 (61.72%) |******************************
+     2.000    1510377.000 (10.93%) |*****
+     3.000    231499.000 ( 1.68%) |
+     4.000    45021.000 ( 0.33%) |
+     5.000    13882.000 ( 0.10%) |
+     6.000    2776.000 ( 0.02%) |
+     7.000    636.000 ( 0.00%) |
+     8.000    473.000 ( 0.00%) |
+End of Report
+
+
+Mean MSHR request occupancy: 1.961 [stddev 2.164]
+
+Statistics Record Mshr req occupancy:
+   Number of intervals = 1621078, Max Value = 36, Min Value = 0
+   Sampling interval = 1.38135e+07,   Sampling rate = 0.117354
+   Mean = 1.96131,   Standard Deviation = 2.16442
+      Bin         Value
+      ---         -----
+       -       0.000 ( 0.00%) |
+     0.000    13810811.000 (99.98%) |*************************************************
+    12.800    2516.000 ( 0.02%) |
+    25.600    204.000 ( 0.00%) |
+    38.400     0.000 ( 0.00%) |
+    51.200     0.000 ( 0.00%) |
+    64.000     0.000 ( 0.00%) |
+    76.800     0.000 ( 0.00%) |
+    89.600     0.000 ( 0.00%) |
+    102.400     0.000 ( 0.00%) |
+    115.200     0.000 ( 0.00%) |
+    128.000     0.000 ( 0.00%) |
+End of Report
+
+
+Mean lateness: 54.863 [stddev 151.563]
+
+Statistics Record Prefetch Lateness:
+   Number of samples = 7245,   Max Value = 1413,   Min Value = 0
+   Sampling interval = 1.38135e+07,   Sampling rate = 0.000524486
+   Mean = 54.8627,   Standard Deviation = 151.563
+      Bin         Value
+      ---         -----
+       -       0.000 ( 0.00%) |
+     0.000    5904.000 (81.49%) |****************************************
+    10.000    414.000 ( 5.71%) |**
+    20.000     9.000 ( 0.12%) |
+    30.000    20.000 ( 0.28%) |
+    40.000     2.000 ( 0.03%) |
+    50.000     0.000 ( 0.00%) |
+    60.000     8.000 ( 0.11%) |
+    70.000     0.000 ( 0.00%) |
+    80.000     1.000 ( 0.01%) |
+    90.000     1.000 ( 0.01%) |
+    100.000     0.000 ( 0.00%) |
+    110.000     2.000 ( 0.03%) |
+    120.000     0.000 ( 0.00%) |
+    130.000     0.000 ( 0.00%) |
+    140.000     0.000 ( 0.00%) |
+    150.000     4.000 ( 0.06%) |
+    160.000     0.000 ( 0.00%) |
+    170.000     2.000 ( 0.03%) |
+    180.000     0.000 ( 0.00%) |
+    190.000     0.000 ( 0.00%) |
+    200.000    878.000 (12.12%) |******
+End of Report
+
+
+Mean earlyness: 25.159 [stddev 164.158]
+
+Statistics Record Prefetch Earlyness:
+   Number of samples = 181388,   Max Value = 21095,   Min Value = 1
+   Sampling interval = 1.38131e+07,   Sampling rate = 0.0131316
+   Mean = 25.1589,   Standard Deviation = 164.158
+      Bin         Value
+      ---         -----
+       -       0.000 ( 0.00%) |
+     0.000    7465.000 ( 4.12%) |**
+    10.000    168076.000 (92.66%) |**********************************************
+    20.000    3364.000 ( 1.85%) |
+    30.000    917.000 ( 0.51%) |
+    40.000     2.000 ( 0.00%) |
+    50.000     1.000 ( 0.00%) |
+    60.000     0.000 ( 0.00%) |
+    70.000     0.000 ( 0.00%) |
+    80.000     0.000 ( 0.00%) |
+    90.000     0.000 ( 0.00%) |
+    100.000     0.000 ( 0.00%) |
+    110.000     0.000 ( 0.00%) |
+    120.000     0.000 ( 0.00%) |
+    130.000     0.000 ( 0.00%) |
+    140.000     0.000 ( 0.00%) |
+    150.000     0.000 ( 0.00%) |
+    160.000     1.000 ( 0.00%) |
+    170.000     1.000 ( 0.00%) |
+    180.000     0.000 ( 0.00%) |
+    190.000     0.000 ( 0.00%) |
+    200.000    1561.000 ( 0.86%) |
+End of Report
+
+MSHR PIPE STALLS: WAR (15680)	MSHR_COHE (0)	PEND_COHE (0)	MAX_COAL (0)	CONF (0)	FULL (275)
+
+Cohes:	8168
+Cohes nacked:	0
+Cohes stalled:	0
+Cohe-replys:	8168
+Cohe-replys merged:	0
+Cohe-replys merged but ignored for PR:	0
+Cohe-replys nacked:	7131
+Cohe-replys nacked with docohe:	0
+Cohe-replys nacked with failed merge:	0
+Cohe-replys nack-pended:	0
+Cohe-reply  nack-pends propagated:	0
+Cohe-reply  unsolicited WRBs:	0
+Cohe cache-to-cache requests:	0
+Cohe cache-to-cache failures:	0
+
+Replies nacked: 0
+RARs handled: 0
+
+WRB inclusions sent: 0	from L2,E: 0	real: 0	race: 0	repeats: 0
+Victims: SH_CL: 0	PR_CL: 328651	PR_DY: 188597
+Pipe stalls for REQs matching WRB replacement: 0	for WRBBUF full: 0
+
+Pref_Total: 754326
+Pref_Dropped: 0 ( 0.00 %)
+Pref_Unnecessary: 557944 ( 73.97 %)
+Pref_Late: 7127 ( 0.94 %)
+Pref_Useful: 181388 ( 24.05 %)
+Pref_Upgrade: 0 ( 0.00 %)
+Pref_Useless: 7463 ( 0.99 %)
+Pref_Invalidated: 398 ( 0.05 %)
+Pref_Downgraded: 0 ( 0.00 %)
+Pref_Damaging: 2089 ( 0.28 %)
+
+
+Name          Num_Ref          Num_Hit;Hit_Rate   Miss_latency     Utilization
+L2cache0      531102           520926(   98%)          0              0.413
+Num_hit: 520926  Num_miss: 10176 Num_lat: 0
+DEMAND READ	CACHE_HIT: 320869   (0.977,0.604)
+DEMAND READ	CACHE_MISS_COLD: 1081     (0.003,0.002)
+DEMAND READ	CACHE_MISS_CONF: 6628     (0.020,0.012)
+DEMAND READ	CACHE_MISS_CAP: 0        (0.000,0.000)
+DEMAND READ	CACHE_MISS_COHE: 0        (0.000,0.000)
+DEMAND READ	CACHE_MISS_UPGR: 0        (0.000,0.000)
+DEMAND READ	CACHE_MISS_WT: 0        (0.000,0.000)
+DEMAND READ	CACHE_MISS_COAL: 0        (0.000,0.000)
+DEMAND WRITE	CACHE_HIT: 893      (0.816,0.002)
+DEMAND WRITE	CACHE_MISS_COLD: 0        (0.000,0.000)
+DEMAND WRITE	CACHE_MISS_CONF: 202      (0.184,0.000)
+DEMAND WRITE	CACHE_MISS_CAP: 0        (0.000,0.000)
+DEMAND WRITE	CACHE_MISS_COHE: 0        (0.000,0.000)
+DEMAND WRITE	CACHE_MISS_UPGR: 0        (0.000,0.000)
+DEMAND WRITE	CACHE_MISS_WT: 0        (0.000,0.000)
+DEMAND WRITE	CACHE_MISS_COAL: 0        (0.000,0.000)
+DEMAND RMW	CACHE_HIT: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_COLD: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_CONF: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_CAP: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_COHE: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_UPGR: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_WT: 0        (nan,0.000)
+DEMAND RMW	CACHE_MISS_COAL: 0        (nan,0.000)
+PREF   L1WRITE_PREFETCH	CACHE_HIT: 199164   (0.989,0.375)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_COLD: 1047     (0.005,0.002)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_CONF: 1218     (0.006,0.002)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_CAP: 0        (0.000,0.000)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_COHE: 0        (0.000,0.000)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_UPGR: 0        (0.000,0.000)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_WT: 0        (0.000,0.000)
+PREF   L1WRITE_PREFETCH	CACHE_MISS_COAL: 0        (0.000,0.000)
+PREF   L1READ_PREFETCH	CACHE_HIT: 0        (nan,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_COLD: 0        (nan,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_CONF: 0        (nan,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_CAP: 0        (nan,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_COHE: 0        (nan,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_UPGR: 0        (nan,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_WT: 0        (nan,0.000)
+PREF   L1READ_PREFETCH	CACHE_MISS_COAL: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_HIT: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_COLD: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_CONF: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_CAP: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_COHE: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_UPGR: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_WT: 0        (nan,0.000)
+PREF   L2WRITE_PREFETCH	CACHE_MISS_COAL: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_HIT: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_COLD: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_CONF: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_CAP: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_COHE: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_UPGR: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_WT: 0        (nan,0.000)
+PREF   L2READ_PREFETCH	CACHE_MISS_COAL: 0        (nan,0.000)
+DEMAND network miss READ	: 7709 @ 533.625 [stddev 124.023]
+DEMAND network miss WRITE	: 202 @ 607.881 [stddev 1.359]
+DEMAND network miss RMW	: 0 @ nan [stddev nan]
+PREF network miss L1WRITE_PREFETCH	: 2265 @ 367.415 [stddev 127.462]
+PREF network miss L1READ_PREFETCH	: 0 @ nan [stddev nan]
+PREF network miss L2WRITE_PREFETCH	: 0 @ nan [stddev nan]
+PREF network miss L2READ_PREFETCH	: 0 @ nan [stddev nan]
+
+Mean MSHR occupancy: 0.374 [stddev 0.559]
+
+Statistics Record Mshr occupancy:
+   Number of intervals = 20351, Max Value = 8, Min Value = 0
+   Sampling interval = 1.38135e+07,   Sampling rate = 0.00147334
+   Mean = 0.373568,   Standard Deviation = 0.559178
+      Bin         Value
+      ---         -----
+       -       0.000 ( 0.00%) |
+     0.000    9099316.000 (65.87%) |********************************
+     1.000    4331578.000 (31.36%) |***************
+     2.000    341232.000 ( 2.47%) |*
+     3.000    26346.000 ( 0.19%) |
+     4.000    11175.000 ( 0.08%) |
+     5.000    1804.000 ( 0.01%) |
+     6.000    1410.000 ( 0.01%) |
+     7.000    218.000 ( 0.00%) |
+     8.000    437.000 ( 0.00%) |
+End of Report
+
+
+Mean MSHR request occupancy: 0.374 [stddev 0.559]
+
+Statistics Record Mshr req occupancy:
+   Number of intervals = 20351, Max Value = 8, Min Value = 0
+   Sampling interval = 1.38135e+07,   Sampling rate = 0.00147334
+   Mean = 0.373568,   Standard Deviation = 0.559178
+      Bin         Value
+      ---         -----
+       -       0.000 ( 0.00%) |
+     0.000    13813516.000 (100.00%) |**************************************************
+    12.800     0.000 ( 0.00%) |
+    25.600     0.000 ( 0.00%) |
+    38.400     0.000 ( 0.00%) |
+    51.200     0.000 ( 0.00%) |
+    64.000     0.000 ( 0.00%) |
+    76.800     0.000 ( 0.00%) |
+    89.600     0.000 ( 0.00%) |
+    102.400     0.000 ( 0.00%) |
+    115.200     0.000 ( 0.00%) |
+    128.000     0.000 ( 0.00%) |
+End of Report
+
+
+Mean lateness: nan [stddev nan]
+
+Statistics Record Prefetch Lateness:
+   Number of samples = 0,   Max Value = 0,   Min Value = 0
+   Sampling interval = 0,   Sampling rate = inf
+   Mean = nan,   Standard Deviation = 0
+End of Report
+
+
+Mean earlyness: 201850.233 [stddev 85506.149]
+
+Statistics Record Prefetch Earlyness:
+   Number of samples = 948,   Max Value = 356397,   Min Value = 303
+   Sampling interval = 1.3813e+07,   Sampling rate = 6.86308e-05
+   Mean = 201850,   Standard Deviation = 85506.1
+      Bin         Value
+      ---         -----
+       -       0.000 ( 0.00%) |
+     0.000     0.000 ( 0.00%) |
+    10.000     0.000 ( 0.00%) |
+    20.000     0.000 ( 0.00%) |
+    30.000     0.000 ( 0.00%) |
+    40.000     0.000 ( 0.00%) |
+    50.000     0.000 ( 0.00%) |
+    60.000     0.000 ( 0.00%) |
+    70.000     0.000 ( 0.00%) |
+    80.000     0.000 ( 0.00%) |
+    90.000     0.000 ( 0.00%) |
+    100.000     0.000 ( 0.00%) |
+    110.000     0.000 ( 0.00%) |
+    120.000     0.000 ( 0.00%) |
+    130.000     0.000 ( 0.00%) |
+    140.000     0.000 ( 0.00%) |
+    150.000     0.000 ( 0.00%) |
+    160.000     0.000 ( 0.00%) |
+    170.000     0.000 ( 0.00%) |
+    180.000     0.000 ( 0.00%) |
+    190.000     0.000 ( 0.00%) |
+    200.000    948.000 (100.00%) |**************************************************
+End of Report
+
+MSHR PIPE STALLS: WAR (0)	MSHR_COHE (0)	PEND_COHE (0)	MAX_COAL (0)	CONF (0)	FULL (0)
+
+Cohes:	0
+Cohes nacked:	0
+Cohes stalled:	0
+Cohe-replys:	196765
+Cohe-replys merged:	0
+Cohe-replys merged but ignored for PR:	0
+Cohe-replys nacked:	0
+Cohe-replys nacked with docohe:	0
+Cohe-replys nacked with failed merge:	0
+Cohe-replys nack-pended:	0
+Cohe-reply  nack-pends propagated:	0
+Cohe-reply  unsolicited WRBs:	188597
+Cohe cache-to-cache requests:	0
+Cohe cache-to-cache failures:	0
+
+Replies nacked: 0
+RARs handled: 0
+
+WRB inclusions sent: 8168	from L2,E: 7858	real: 1037	race: 0	repeats: 0
+Victims: SH_CL: 0	PR_CL: 7858	PR_DY: 310
+Pipe stalls for REQs matching WRB replacement: 0	for WRBBUF full: 0
+
+Pref_Total: 196382
+Pref_Dropped: 0 ( 0.00 %)
+Pref_Unnecessary: 194117 ( 98.85 %)
+Pref_Late: 0 ( 0.00 %)
+Pref_Useful: 948 ( 0.48 %)
+Pref_Upgrade: 0 ( 0.00 %)
+Pref_Useless: 1223 ( 0.62 %)
+Pref_Invalidated: 0 ( 0.00 %)
+Pref_Downgraded: 0 ( 0.00 %)
+Pref_Damaging: 1219 ( 0.62 %)
+
+
+##### Bus Statistics #####
+bus0: Bus Utilization (time spent delivering pkts) = 1.0758%
+
+
+
+##### Dir Statistics #####
+
+Name          Num_Ref          Num_Hit;Hit_Rate   Miss_latency     Utilization
+dir0_0           969              969(1e+02%)          0             0.03131
+              Read             Write              Local            Remote
+                401(0.4138)      568(0.5862)      969(1)        0(     0)
+              NumBufRAR 
+                  0(     0) 
+
+Name          Num_Ref          Num_Hit;Hit_Rate   Miss_latency     Utilization
+dir0_1           961              961(1e+02%)          0             0.03096
+              Read             Write              Local            Remote
+                386(0.4017)      575(0.5983)      961(1)        0(     0)
+              NumBufRAR 
+                  0(     0) 
+
+Name          Num_Ref          Num_Hit;Hit_Rate   Miss_latency     Utilization
+dir0_2           536              536(1e+02%)          0             0.01242
+              Read             Write              Local            Remote
+                270(0.5037)      266(0.4963)      536(1)        0(     0)
+              NumBufRAR 
+                  0(     0) 
+
+Name          Num_Ref          Num_Hit;Hit_Rate   Miss_latency     Utilization
+dir0_3          7710             7710(1e+02%)          0             0.3252
+              Read             Write              Local            Remote
+               6652(0.8628)     1058(0.1372)     7710(1)        0(     0)
+              NumBufRAR 
+                  0(     0) 
+PROCESSOR 0 Phase -1 STATISTICS: 
+Start cycle: 13813675		icount: 20280224
+End cycle: 13818279		icount: 20285448
+
+Statistics Record Active list size:
+   Number of samples = 4498,   Max Value = 64,   Min Value = 1
+   Sampling interval = 4603,   Sampling rate = 0.977189
+   Mean = 48.8055,   Standard Deviation = 20.6059
+      Bin         Value
+      ---         -----
+       -       0.000 ( 0.00%) |
+     0.000    194.000 ( 4.31%) |**
+     8.000    311.000 ( 6.91%) |***
+    16.000    333.000 ( 7.40%) |***
+    24.000    302.000 ( 6.71%) |***
+    32.000    243.000 ( 5.40%) |**
+    40.000    257.000 ( 5.71%) |**
+    48.000    145.000 ( 3.22%) |*
+    56.000    128.000 ( 2.85%) |*
+    64.000    2585.000 (57.47%) |****************************
+End of Report
+
+
+Statistics Record Speculation level:
+   Number of samples = 4498,   Max Value = 8,   Min Value = 0
+   Sampling interval = 4603,   Sampling rate = 0.977189
+   Mean = 2.2948,   Standard Deviation = 2.68488
+End of Report
+
+
+Statistics Record Mem queue size:
+   Number of samples = 4498,   Max Value = 32,   Min Value = 0
+   Sampling interval = 4603,   Sampling rate = 0.977189
+   Mean = 10.9371,   Standard Deviation = 8.65258
+      Bin         Value
+      ---         -----
+       -       0.000 ( 0.00%) |
+     0.000    2226.000 (49.49%) |************************
+     8.000    458.000 (10.18%) |*****
+    16.000    1741.000 (38.71%) |*******************
+    24.000    65.000 ( 1.45%) |
+    32.000     8.000 ( 0.18%) |
+End of Report
+
+BPB Good predictions: 137, BPB Bad predictions: 127, BPB Prediction rate: 0.518939
+RAS Good predictions: 47, RAS Bad predictions: 63, RAS Prediction rate: 0.427273
+Loads issued: 561, speced: 34, limbos: 23, unlimbos: 10, redos: 0, kills: 0
+Memory unit fwds: 0, Virtual store buffer fwds: 0 Partial overlaps: 0
+
+Statistics Record Bad prediction flushes:
+   Number of samples = 186,   Max Value = 63,   Min Value = 0
+   Sampling interval = 4571,   Sampling rate = 0.0406913
+   Mean = 18.2473,   Standard Deviation = 15.3877
+End of Report
+
+Exceptions: 20
+Soft Exceptions: 0
+SL Soft Exceptions: 0
+SL Soft Exceptions (replacements): 0
+SL Footnote 5 occurences: 0
+Window overflows: 2 underflows: 3
+Cycles since last graduation: 0
+
+Statistics Record Exception flushes:
+   Number of samples = 20,   Max Value = 62,   Min Value = 5
+   Sampling interval = 4604,   Sampling rate = 0.00434405
+   Mean = 26.7,   Standard Deviation = 21.5482
+End of Report
+
+ALU utilization: 49.6%
+FPU utilization: 0.0%
+Addr. gen. utilization: 9.4%
+
+Statistics Record Waiting for exceptions:
+   Number of samples = 20,   Max Value = 0,   Min Value = 0
+   Sampling interval = 4604,   Sampling rate = 0.00434405
+   Mean = 0,   Standard Deviation = 0
+End of Report
+
+Demand read UNKNOWN -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read L1HIT -- Num 377(0.832,0.709) Mean 8.406/4.928/4.926 Stddev 27.041/26.864/26.864
+Demand read L1COAL -- Num 57(0.126,0.107) Mean 383.474/378.070/377.754 Stddev 129.729/128.707/128.523
+Demand read WBCOAL -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read L2HIT -- Num 3(0.007,0.006) Mean 20.000/17.000/17.000 Stddev 3.464/0.000/0.000
+Demand read L2COAL -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read DIR_LH_NOCOHE -- Num 16(0.035,0.030) Mean 439.688/432.750/432.625 Stddev 148.251/145.660/145.689
+Demand read DIR_LH_RCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read DIR_RH_NOCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read DIR_RH_LCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read DIR_RH_RCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand read CACHE_TO_CACHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write UNKNOWN -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write L1HIT -- Num 76(0.962,0.143) Mean 147.487/143.961/6.763 Stddev 238.998/237.893/32.806
+Demand write L1COAL -- Num 3(0.038,0.006) Mean 590.000/588.667/288.000 Stddev 268.099/267.575/148.354
+Demand write WBCOAL -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write L2HIT -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write L2COAL -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write DIR_LH_NOCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write DIR_LH_RCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write DIR_RH_NOCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write DIR_RH_LCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write DIR_RH_RCOHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand write CACHE_TO_CACHE -- Num 0(0.000,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw UNKNOWN -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw L1HIT -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw L1COAL -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw WBCOAL -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw L2HIT -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw L2COAL -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw DIR_LH_NOCOHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw DIR_LH_RCOHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw DIR_RH_NOCOHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw DIR_RH_LCOHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw DIR_RH_RCOHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Demand rmw CACHE_TO_CACHE -- Num 0(nan,0.000) Mean nan/nan/nan Stddev nan/nan/nan
+Pref sh UNKNOWN -- Num 0 Mean nan Stddev nan
+Pref sh L1HIT -- Num 0 Mean nan Stddev nan
+Pref sh L1COAL -- Num 0 Mean nan Stddev nan
+Pref sh WBCOAL -- Num 0 Mean nan Stddev nan
+Pref sh L2HIT -- Num 0 Mean nan Stddev nan
+Pref sh L2COAL -- Num 0 Mean nan Stddev nan
+Pref sh DIR_LH_NOCOHE -- Num 0 Mean nan Stddev nan
+Pref sh DIR_LH_RCOHE -- Num 0 Mean nan Stddev nan
+Pref sh DIR_RH_NOCOHE -- Num 0 Mean nan Stddev nan
+Pref sh DIR_RH_LCOHE -- Num 0 Mean nan Stddev nan
+Pref sh DIR_RH_RCOHE -- Num 0 Mean nan Stddev nan
+Pref sh CACHE_TO_CACHE -- Num 0 Mean nan Stddev nan
+Pref excl UNKNOWN -- Num 0 Mean nan Stddev nan
+Pref excl L1HIT -- Num 173 Mean 15.069 Stddev 75.664
+Pref excl L1COAL -- Num 0 Mean nan Stddev nan
+Pref excl WBCOAL -- Num 0 Mean nan Stddev nan
+Pref excl L2HIT -- Num 0 Mean nan Stddev nan
+Pref excl L2COAL -- Num 0 Mean nan Stddev nan
+Pref excl DIR_LH_NOCOHE -- Num 4 Mean 707.000 Stddev 300.103
+Pref excl DIR_LH_RCOHE -- Num 0 Mean nan Stddev nan
+Pref excl DIR_RH_NOCOHE -- Num 0 Mean nan Stddev nan
+Pref excl DIR_RH_LCOHE -- Num 0 Mean nan Stddev nan
+Pref excl DIR_RH_RCOHE -- Num 0 Mean nan Stddev nan
+Pref excl CACHE_TO_CACHE -- Num 0 Mean nan Stddev nan
+
+Avail loss from ALU time: 0.004
+Avail loss from User 1 time: 0.000
+Avail loss from User 2 time: 0.000
+Avail loss from User 3 time: 0.000
+Avail loss from User 4 time: 0.000
+Avail loss from User 5 time: 0.000
+Avail loss from User 6 time: 0.000
+Avail loss from User 7 time: 0.000
+Avail loss from User 8 time: 0.000
+Avail loss from User 9 time: 0.000
+Avail loss from Barrier time: 0.000
+Avail loss from Spin time: 0.000
+Avail loss from Acquire time: 0.000
+Avail loss from Release time: 0.000
+Avail loss from RMW time: 0.000
+Avail loss from Write time: 0.255
+Avail loss from Read time: 0.288
+Avail loss from Branch time: 0.006
+Avail loss from FPU time: 0.000
+Avail loss from Except time: 0.000
+Avail loss from MEMBAR time: 0.000
+Avail loss from BUSY TIME: 0.000
+Avail loss from Read miss time: 0.000
+Avail loss from Write miss time: 0.000
+Avail loss from RMW miss time: 0.000
+Avail loss from Read L1 time: 0.000
+Avail loss from Read L2 time: 0.000
+Avail loss from Read localmem time: 0.000
+Avail loss from Read remotemem time: 0.000
+Avail loss from Write L1 time: 0.000
+Avail loss from Write L2 time: 0.000
+Avail loss from Write localmem time: 0.000
+Avail loss from Write remotemem time: 0.000
+Avail loss from RMW L1 time: 0.000
+Avail loss from RMW L2 time: 0.000
+Avail loss from RMW localmem time: 0.000
+Avail loss from RMW remotemem time: 0.000
+Avail loss from RMW Late PF time: 0.000
+Avail loss from Write Late PF time: 0.000
+Avail loss from Read Late PF time: 0.000
+
+Efficiency loss from OK: 0.000
+Efficiency loss from Branch in cycle: 0.159
+Efficiency loss from Unpredicted branch: 0.020
+Efficiency loss from Shadow mappers full: 0.154
+Efficiency loss from Rename registers full: 0.000
+Efficiency loss from Memory queue full: 0.000
+Efficiency loss from Issue queue full: 0.000
+
+Utility losses from misspecs: 0.650 excepts: 0.102
+
+
+

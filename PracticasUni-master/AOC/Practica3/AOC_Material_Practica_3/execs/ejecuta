@@ -1,0 +1,62 @@
+#! /bin/bash
+
+EXECS_DIR="$(dirname "$0")"
+TEST_ID="${TEST_ID:-$(date -Is | tr : - | cut -d+ -f1)}"
+
+OUT_DIR="${EXECS_DIR}/../outputs/${TEST_ID}"
+mkdir "${OUT_DIR}"
+
+CONFIG_FILE="${OUT_DIR}/rsim.config"
+# Genera rsim.config
+cat > "${CONFIG_FILE}" <<EOF
+numnodes	16
+ccprot		msi
+linesize	32
+l1type		WB
+l1size		8	
+l1assoc		2
+l1taglatency	2	
+l2size		32
+l2taglatency	6	
+l2datalatency   2 
+meminterleaving 1
+memorylatency  18	
+dircycle	1	
+flitdelay	2		
+arbdelay	2	
+pipelinedsw	1	
+STOPCONFIG 1
+EOF
+
+JACOBI_N=64
+JACOBI_NUM_PROCESSES=8
+JACOBI_TOLERANCE=0.1
+JACOBI_FPB=8
+JACOBI_VERBOSE=0
+
+JACOBI_PARAMETRO_LOCK_1=1
+JACOBI_PARAMETRO_TREEBAR_1=0
+JACOBI_PARAMETRO_LOCK_2=1
+JACOBI_PARAMETRO_TREEBAR_2=1
+JACOBI_PARAMETRO_LOCK_3=1
+JACOBI_PARAMETRO_TREEBAR_3=1
+JACOBI_PARAMETRO_TREEBAR_4=1
+JACOBI_PARAMETRO_ASSOCIATEADDRNODE=0
+
+JACOBI_PARAMETROS_FILE="${OUT_DIR}/jacobi_parametros"
+# Genera fichero de parametros (sincronización)
+echo "${JACOBI_PARAMETRO_LOCK_1} ${JACOBI_PARAMETRO_TREEBAR_1} ${JACOBI_PARAMETRO_LOCK_2} ${JACOBI_PARAMETRO_TREEBAR_2} ${JACOBI_PARAMETRO_LOCK_3} ${JACOBI_PARAMETRO_TREEBAR_3} ${JACOBI_PARAMETRO_TREEBAR_4} ${JACOBI_PARAMETRO_ASSOCIATEADDRNODE} " > "${JACOBI_PARAMETROS_FILE}"
+
+OPTIONS="-z${CONFIG_FILE}" # fichero de configuración
+#OPTIONS="${OPTIONS} -n" # activa la simulación de accesos a cachés privadas. Desactivado para simulaciones de multiprocesadores para mejorar la velocidad de simulación
+#OPTIONS="${OPTIONS} -K" # activa cargas especulativas
+#OPTIONS="${OPTIONS} -p" # activa prefetch controlado por hardware
+#OPTIONS="${OPTIONS} -N" # activa store buffer
+OPTIONS="${OPTIONS} -i2" # número de instrucciones en la etapa de fetch por ciclo
+OPTIONS="${OPTIONS} -a16" # tamaño de la lista de instrucciones activas (ROB)
+OPTIONS="${OPTIONS} -m8" # máximo número de opraciones en la unidad de memoria
+OPTIONS="${OPTIONS} -W"  # desactiva warnings de la política «first-touch»
+
+
+echo Ejecutando: "${EXECS_DIR}/rsim" -f"${EXECS_DIR}/jacobi_rc" -D"${OUT_DIR}" -S"jacobi_rc" -0 /dev/null ${OPTIONS} -- $JACOBI_N $JACOBI_NUM_PROCESSES $JACOBI_TOLERANCE $JACOBI_FPB $JACOBI_VERBOSE "$JACOBI_PARAMETROS_FILE"
+                 "${EXECS_DIR}/rsim" -f"${EXECS_DIR}/jacobi_rc" -D"${OUT_DIR}" -S"jacobi_rc" -0 /dev/null ${OPTIONS} -- $JACOBI_N $JACOBI_NUM_PROCESSES $JACOBI_TOLERANCE $JACOBI_FPB $JACOBI_VERBOSE "$JACOBI_PARAMETROS_FILE"

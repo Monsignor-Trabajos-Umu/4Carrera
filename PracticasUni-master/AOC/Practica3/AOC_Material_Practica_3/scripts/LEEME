@@ -1,0 +1,7 @@
+Al script pstats se le debe proporcionar el fichero _err de estadísticas y la fase a analizar:
+
+Ejemplo de uso:
+
+./pstats ../outputs/s_jacobi_rc_err 1
+
+

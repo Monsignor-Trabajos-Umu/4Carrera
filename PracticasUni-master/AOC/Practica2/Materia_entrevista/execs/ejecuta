@@ -1,0 +1,41 @@
+#! /bin/bash
+
+EXECS_DIR="$(dirname "$0")"
+TEST_ID="${TEST_ID:-$(date -Is | tr : - | cut -d+ -f1)}"
+
+OUT_DIR="${EXECS_DIR}/../outputs/${TEST_ID}"
+mkdir "${OUT_DIR}"
+
+CONFIG_FILE="${OUT_DIR}/rsim.config"
+# Genera rsim.config
+cat > "${CONFIG_FILE}" <<EOF
+numnodes 1
+bpbtype static
+numalus 1 
+numfpus 1 
+numaddrs 1  
+linesize 32 
+l1type WB
+l1size 8
+l1assoc 2 
+l1taglatency 3 
+l2size 64
+l2assoc 2 
+l2taglatency 9
+l2datalatency 2
+memorylatency 300 
+STOPCONFIG 1
+EOF
+
+JACOBI_N=60
+
+OPTIONS="-z${CONFIG_FILE}" # fichero de configuración
+OPTIONS="${OPTIONS} -K" # activa cargas especulativas
+OPTIONS="${OPTIONS} -p" # activa prefetch controlado por hardware
+OPTIONS="${OPTIONS} -n" # activa la simulación de accesos a cachés privadas
+OPTIONS="${OPTIONS} -i4" # número de instrucciones en la etapa de fetch por ciclo
+OPTIONS="${OPTIONS} -a32" # tamaño de la lista de instrucciones activas (ROB)
+
+
+echo Ejecutando: "${EXECS_DIR}/rsim" -f"${EXECS_DIR}/jacobi_rc" -D"${OUT_DIR}" -S"jacobi_rc" -0 /dev/null ${OPTIONS} -- $JACOBI_N
+"${EXECS_DIR}/rsim" -f"${EXECS_DIR}/jacobi_rc" -D"${OUT_DIR}" -S"jacobi_rc" -0 /dev/null ${OPTIONS} -- $JACOBI_N

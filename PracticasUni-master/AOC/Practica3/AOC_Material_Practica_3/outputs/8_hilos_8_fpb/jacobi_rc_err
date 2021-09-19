@@ -1,0 +1,933 @@
+RSIM command line: ./rsim -f./jacobi_rc -D./../outputs/8_hilos_8_fpb -Sjacobi_rc -0 /dev/null -z./../outputs/8_hilos_8_fpb/rsim.config -i2 -a16 -m8 -W -- 64 8 0.1 8 0 ./../outputs/8_hilos_8_fpb/jacobi_parametros 
+RSIM:	Active list: 16
+	Speculations: 8
+	Issue rate: 2
+	Max memory queue size: 8
+
+
+Startup command line: ./jacobi_rc.out 64 8 0.1 8 0 ./../outputs/8_hilos_8_fpb/jacobi_parametros 
+
+Startup passed!!
+STAT Processor: 1 EndPhase: 1 Issued: 15551784 Graduated: 15412033
+STAT Execution time: 19010962 Start time: 32742 Since last grad: 1
+STAT ALU time: Grads 20039 Ratio 0.0011
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 1512 Ratio 0.3644
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 757 Ratio 0.0081
+STAT Release time: Grads 757 Ratio 0.0002
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 1175582 Ratio 0.1346
+STAT Read time: Grads 3498021 Ratio 0.3260
+STAT Branch time: Grads 2652 Ratio 0.0001
+STAT FPU time: Grads 578338 Ratio 0.0406
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 2374987 Ratio 0.1249
+STAT Read miss time: Grads 33679 Ratio 0.0631
+STAT Write miss time: Grads 22270 Ratio 0.0648
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 3464342 Ratio 0.2629
+STAT Read L2 time: Grads 27078 Ratio 0.0164
+STAT Read localmem time: Grads 2 Ratio 0.0000
+STAT Read remotemem time: Grads 6599 Ratio 0.0468
+STAT Write L1 time: Grads 1153312 Ratio 0.0698
+STAT Write L2 time: Grads 15604 Ratio 0.0099
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 6666 Ratio 0.0549
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 0
+STAT Branch prediction rate: 0.9795
+STAT Return prediction rate: 1.0000
+STAT Reads Mean (ACT): 19.228 Stddev: 30.727
+STAT Writes Mean (ACT): 33.716 Stddev: 56.425
+STAT RMW Mean (ACT): 206.752 Stddev: 55.623
+STAT Reads Mean (EA): 7.517 Stddev: 22.336
+STAT Writes Mean (EA): 12.806 Stddev: 34.143
+STAT RMW Mean (EA): 201.266 Stddev: 52.432
+STAT Reads Mean (ISS): 3.041 Stddev: 16.100
+STAT Writes Mean (ISS): 10.834 Stddev: 34.221
+STAT RMW Mean (ISS): 198.272 Stddev: 54.232
+STAT ExceptionWait Mean: 0.000 Stddev: nan
+STAT Availability: 0.409 Efficiency: 1.000 Utility: 0.991
+
+STAT Processor: 3 EndPhase: 1 Issued: 11280963 Graduated: 11183838
+STAT Execution time: 19010261 Start time: 33548 Since last grad: 1
+STAT ALU time: Grads 11050 Ratio 0.0006
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 1512 Ratio 0.1545
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 757 Ratio 0.0237
+STAT Release time: Grads 757 Ratio 0.0046
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 1174835 Ratio 0.2276
+STAT Read time: Grads 3495273 Ratio 0.4231
+STAT Branch time: Grads 1907 Ratio 0.0001
+STAT FPU time: Grads 577960 Ratio 0.0406
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 2378676 Ratio 0.1251
+STAT Read miss time: Grads 39468 Ratio 0.1608
+STAT Write miss time: Grads 21902 Ratio 0.1579
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 3455805 Ratio 0.2623
+STAT Read L2 time: Grads 26030 Ratio 0.0156
+STAT Read localmem time: Grads 2 Ratio 0.0000
+STAT Read remotemem time: Grads 13436 Ratio 0.1452
+STAT Write L1 time: Grads 1152933 Ratio 0.0698
+STAT Write L2 time: Grads 8836 Ratio 0.0056
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 13066 Ratio 0.1523
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 0
+STAT Branch prediction rate: 0.9748
+STAT Return prediction rate: 1.0000
+STAT Reads Mean (ACT): 26.727 Stddev: 58.378
+STAT Writes Mean (ACT): 49.308 Stddev: 103.729
+STAT RMW Mean (ACT): 423.912 Stddev: 106.709
+STAT Reads Mean (EA): 10.507 Stddev: 34.524
+STAT Writes Mean (EA): 21.320 Stddev: 60.394
+STAT RMW Mean (EA): 418.383 Stddev: 105.261
+STAT Reads Mean (ISS): 3.558 Stddev: 20.095
+STAT Writes Mean (ISS): 19.341 Stddev: 60.422
+STAT RMW Mean (ISS): 415.663 Stddev: 105.759
+STAT ExceptionWait Mean: 0.000 Stddev: nan
+STAT Availability: 0.297 Efficiency: 1.000 Utility: 0.991
+
+STAT Processor: 2 EndPhase: 1 Issued: 11903175 Graduated: 11843377
+STAT Execution time: 19010739 Start time: 33149 Since last grad: 1
+STAT ALU time: Grads 16951 Ratio 0.0009
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 1512 Ratio 0.1521
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 757 Ratio 0.0252
+STAT Release time: Grads 757 Ratio 0.0065
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 1174946 Ratio 0.2479
+STAT Read time: Grads 3495419 Ratio 0.4017
+STAT Branch time: Grads 2208 Ratio 0.0001
+STAT FPU time: Grads 577960 Ratio 0.0406
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 2375551 Ratio 0.1250
+STAT Read miss time: Grads 40090 Ratio 0.1395
+STAT Write miss time: Grads 22488 Ratio 0.1782
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 3455329 Ratio 0.2623
+STAT Read L2 time: Grads 26977 Ratio 0.0162
+STAT Read localmem time: Grads 2 Ratio 0.0000
+STAT Read remotemem time: Grads 13111 Ratio 0.1233
+STAT Write L1 time: Grads 1152458 Ratio 0.0697
+STAT Write L2 time: Grads 7896 Ratio 0.0050
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 14592 Ratio 0.1732
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 0
+STAT Branch prediction rate: 0.9854
+STAT Return prediction rate: 0.9996
+STAT Reads Mean (ACT): 25.881 Stddev: 57.288
+STAT Writes Mean (ACT): 51.055 Stddev: 108.515
+STAT RMW Mean (ACT): 389.017 Stddev: 142.471
+STAT Reads Mean (EA): 9.952 Stddev: 32.857
+STAT Writes Mean (EA): 23.055 Stddev: 65.994
+STAT RMW Mean (EA): 383.943 Stddev: 140.784
+STAT Reads Mean (ISS): 3.238 Stddev: 17.342
+STAT Writes Mean (ISS): 21.059 Stddev: 66.003
+STAT RMW Mean (ISS): 381.496 Stddev: 141.956
+STAT ExceptionWait Mean: 0.000 Stddev: nan
+STAT Availability: 0.313 Efficiency: 1.000 Utility: 0.995
+
+STAT Processor: 5 EndPhase: 1 Issued: 10805405 Graduated: 10657394
+STAT Execution time: 19009603 Start time: 34346 Since last grad: 1
+STAT ALU time: Grads 19996 Ratio 0.0011
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 1512 Ratio 0.1375
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 757 Ratio 0.0321
+STAT Release time: Grads 757 Ratio 0.0017
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 1174825 Ratio 0.2524
+STAT Read time: Grads 3497018 Ratio 0.4097
+STAT Branch time: Grads 1933 Ratio 0.0001
+STAT FPU time: Grads 577960 Ratio 0.0406
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 2374219 Ratio 0.1249
+STAT Read miss time: Grads 39622 Ratio 0.1473
+STAT Write miss time: Grads 23404 Ratio 0.1828
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 3457396 Ratio 0.2625
+STAT Read L2 time: Grads 26038 Ratio 0.0155
+STAT Read localmem time: Grads 2 Ratio 0.0000
+STAT Read remotemem time: Grads 13582 Ratio 0.1318
+STAT Write L1 time: Grads 1151421 Ratio 0.0696
+STAT Write L2 time: Grads 8836 Ratio 0.0056
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 14568 Ratio 0.1772
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 0
+STAT Branch prediction rate: 0.9605
+STAT Return prediction rate: 0.9997
+STAT Reads Mean (ACT): 26.793 Stddev: 57.090
+STAT Writes Mean (ACT): 50.379 Stddev: 103.389
+STAT RMW Mean (ACT): 484.156 Stddev: 132.325
+STAT Reads Mean (EA): 10.659 Stddev: 34.082
+STAT Writes Mean (EA): 23.485 Stddev: 63.611
+STAT RMW Mean (EA): 479.290 Stddev: 132.861
+STAT Reads Mean (ISS): 3.507 Stddev: 18.243
+STAT Writes Mean (ISS): 21.514 Stddev: 63.655
+STAT RMW Mean (ISS): 476.968 Stddev: 132.839
+STAT ExceptionWait Mean: 0.000 Stddev: nan
+STAT Availability: 0.284 Efficiency: 1.000 Utility: 0.986
+
+STAT Processor: 6 EndPhase: 1 Issued: 12283556 Graduated: 12222984
+STAT Execution time: 19009248 Start time: 34745 Since last grad: 1
+STAT ALU time: Grads 16747 Ratio 0.0009
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 1512 Ratio 0.1485
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 757 Ratio 0.0355
+STAT Release time: Grads 757 Ratio 0.0045
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 1174825 Ratio 0.2437
+STAT Read time: Grads 3494591 Ratio 0.4012
+STAT Branch time: Grads 1966 Ratio 0.0001
+STAT FPU time: Grads 577960 Ratio 0.0406
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 2375891 Ratio 0.1250
+STAT Read miss time: Grads 32905 Ratio 0.1383
+STAT Write miss time: Grads 22461 Ratio 0.1740
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 3461686 Ratio 0.2629
+STAT Read L2 time: Grads 19425 Ratio 0.0116
+STAT Read localmem time: Grads 2 Ratio 0.0000
+STAT Read remotemem time: Grads 13478 Ratio 0.1267
+STAT Write L1 time: Grads 1152364 Ratio 0.0697
+STAT Write L2 time: Grads 8648 Ratio 0.0055
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 13813 Ratio 0.1685
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 0
+STAT Branch prediction rate: 0.9864
+STAT Return prediction rate: 0.9997
+STAT Reads Mean (ACT): 25.251 Stddev: 55.143
+STAT Writes Mean (ACT): 48.898 Stddev: 103.820
+STAT RMW Mean (ACT): 507.724 Stddev: 177.817
+STAT Reads Mean (EA): 9.814 Stddev: 32.677
+STAT Writes Mean (EA): 21.487 Stddev: 62.381
+STAT RMW Mean (EA): 503.007 Stddev: 178.118
+STAT Reads Mean (ISS): 3.182 Stddev: 16.631
+STAT Writes Mean (ISS): 19.487 Stddev: 62.376
+STAT RMW Mean (ISS): 500.774 Stddev: 178.220
+STAT ExceptionWait Mean: 0.000 Stddev: nan
+STAT Availability: 0.323 Efficiency: 1.000 Utility: 0.995
+
+STAT Processor: 4 EndPhase: 1 Issued: 12030841 Graduated: 11972732
+STAT Execution time: 19010089 Start time: 33947 Since last grad: 1
+STAT ALU time: Grads 16820 Ratio 0.0009
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 1512 Ratio 0.1314
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 757 Ratio 0.0398
+STAT Release time: Grads 757 Ratio 0.0054
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 1174825 Ratio 0.2494
+STAT Read time: Grads 3495368 Ratio 0.4073
+STAT Branch time: Grads 1897 Ratio 0.0001
+STAT FPU time: Grads 578149 Ratio 0.0406
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 2375749 Ratio 0.1250
+STAT Read miss time: Grads 36569 Ratio 0.1448
+STAT Write miss time: Grads 23028 Ratio 0.1798
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 3458799 Ratio 0.2626
+STAT Read L2 time: Grads 23016 Ratio 0.0137
+STAT Read localmem time: Grads 2 Ratio 0.0000
+STAT Read remotemem time: Grads 13551 Ratio 0.1310
+STAT Write L1 time: Grads 1151797 Ratio 0.0696
+STAT Write L2 time: Grads 8460 Ratio 0.0053
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 14568 Ratio 0.1745
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 0
+STAT Branch prediction rate: 0.9862
+STAT Return prediction rate: 0.9998
+STAT Reads Mean (ACT): 25.427 Stddev: 55.171
+STAT Writes Mean (ACT): 50.199 Stddev: 106.108
+STAT RMW Mean (ACT): 607.616 Stddev: 203.738
+STAT Reads Mean (EA): 9.779 Stddev: 31.829
+STAT Writes Mean (EA): 22.528 Stddev: 63.972
+STAT RMW Mean (EA): 602.778 Stddev: 201.779
+STAT Reads Mean (ISS): 3.155 Stddev: 15.847
+STAT Writes Mean (ISS): 20.526 Stddev: 63.972
+STAT RMW Mean (ISS): 600.473 Stddev: 201.430
+STAT ExceptionWait Mean: 0.000 Stddev: nan
+STAT Availability: 0.316 Efficiency: 1.000 Utility: 0.995
+
+STAT Processor: 0 EndPhase: 1 Issued: 11473583 Graduated: 11391696
+STAT Execution time: 19008901 Start time: 35152 Since last grad: 1
+STAT ALU time: Grads 12065 Ratio 0.0007
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 1512 Ratio 0.1376
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 757 Ratio 0.0365
+STAT Release time: Grads 757 Ratio 0.0037
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 1174997 Ratio 0.2406
+STAT Read time: Grads 3495965 Ratio 0.4150
+STAT Branch time: Grads 2236 Ratio 0.0001
+STAT FPU time: Grads 577960 Ratio 0.0406
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 2377853 Ratio 0.1251
+STAT Read miss time: Grads 39335 Ratio 0.1526
+STAT Write miss time: Grads 23253 Ratio 0.1710
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 3456630 Ratio 0.2624
+STAT Read L2 time: Grads 25473 Ratio 0.0152
+STAT Read localmem time: Grads 172 Ratio 0.0006
+STAT Read remotemem time: Grads 13690 Ratio 0.1368
+STAT Write L1 time: Grads 1151744 Ratio 0.0696
+STAT Write L2 time: Grads 8648 Ratio 0.0055
+STAT Write localmem time: Grads 238 Ratio 0.0008
+STAT Write remotemem time: Grads 14367 Ratio 0.1648
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 0
+STAT Branch prediction rate: 0.9800
+STAT Return prediction rate: 0.9997
+STAT Reads Mean (ACT): 25.972 Stddev: 55.216
+STAT Writes Mean (ACT): 49.944 Stddev: 101.991
+STAT RMW Mean (ACT): 483.405 Stddev: 214.555
+STAT Reads Mean (EA): 10.212 Stddev: 33.208
+STAT Writes Mean (EA): 22.083 Stddev: 59.848
+STAT RMW Mean (EA): 478.586 Stddev: 212.649
+STAT Reads Mean (ISS): 3.386 Stddev: 17.647
+STAT Writes Mean (ISS): 20.108 Stddev: 59.896
+STAT RMW Mean (ISS): 476.286 Stddev: 213.781
+STAT ExceptionWait Mean: 0.000 Stddev: nan
+STAT Availability: 0.302 Efficiency: 1.000 Utility: 0.993
+
+STAT Processor: 7 EndPhase: 1 Issued: 15563704 Graduated: 15510352
+STAT Execution time: 19008991 Start time: 35144 Since last grad: 1
+STAT ALU time: Grads 16899 Ratio 0.0009
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 1512 Ratio 0.2957
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 757 Ratio 0.0095
+STAT Release time: Grads 757 Ratio 0.0004
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 1174925 Ratio 0.1708
+STAT Read time: Grads 3495347 Ratio 0.3570
+STAT Branch time: Grads 2075 Ratio 0.0001
+STAT FPU time: Grads 578994 Ratio 0.0407
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 2374697 Ratio 0.1249
+STAT Read miss time: Grads 34248 Ratio 0.0942
+STAT Write miss time: Grads 21336 Ratio 0.1010
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 3461099 Ratio 0.2627
+STAT Read L2 time: Grads 27148 Ratio 0.0161
+STAT Read localmem time: Grads 5 Ratio 0.0000
+STAT Read remotemem time: Grads 7095 Ratio 0.0781
+STAT Write L1 time: Grads 1153589 Ratio 0.0698
+STAT Write L2 time: Grads 13160 Ratio 0.0083
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 8176 Ratio 0.0927
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 0
+STAT Branch prediction rate: 0.9915
+STAT Return prediction rate: 1.0000
+STAT Reads Mean (ACT): 20.204 Stddev: 46.024
+STAT Writes Mean (ACT): 36.721 Stddev: 82.779
+STAT RMW Mean (ACT): 242.536 Stddev: 115.899
+STAT Reads Mean (EA): 6.817 Stddev: 23.380
+STAT Writes Mean (EA): 13.654 Stddev: 44.590
+STAT RMW Mean (EA): 236.552 Stddev: 112.587
+STAT Reads Mean (ISS): 2.917 Stddev: 17.223
+STAT Writes Mean (ISS): 11.654 Stddev: 44.612
+STAT RMW Mean (ISS): 233.559 Stddev: 114.286
+STAT ExceptionWait Mean: 0.000 Stddev: nan
+STAT Availability: 0.409 Efficiency: 1.000 Utility: 0.997
+
+Processor 1 exiting with code 0
+Processor 3 exiting with code 0
+Processor 2 exiting with code 0
+Processor 5 exiting with code 0
+Processor 6 exiting with code 0
+Processor 4 exiting with code 0
+Processor 7 exiting with code 0
+Processor 0 exiting with code 0
+Total elapsed time of simulation 162.000000
+Simulated time 19045157.500000
+STAT Processor: 0 EndPhase: -1 Issued: 1997 Graduated: 1791
+STAT Execution time: 1104 Start time: 19044053 Since last grad: 0
+STAT ALU time: Grads 79 Ratio 0.1132
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 0 Ratio nan
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 0 Ratio nan
+STAT Release time: Grads 0 Ratio nan
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 48 Ratio 0.0435
+STAT Read time: Grads 61 Ratio 0.0625
+STAT Branch time: Grads 78 Ratio 0.0725
+STAT FPU time: Grads 0 Ratio nan
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 782 Ratio 0.7083
+STAT Read miss time: Grads 0 Ratio nan
+STAT Write miss time: Grads 0 Ratio nan
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 61 Ratio 0.0625
+STAT Read L2 time: Grads 0 Ratio nan
+STAT Read localmem time: Grads 0 Ratio nan
+STAT Read remotemem time: Grads 0 Ratio nan
+STAT Write L1 time: Grads 48 Ratio 0.0435
+STAT Write L2 time: Grads 0 Ratio nan
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 0 Ratio nan
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 1
+STAT Branch prediction rate: 0.8412
+STAT Return prediction rate: 0.5476
+STAT Reads Mean (ACT): nan Stddev: nan
+STAT Writes Mean (ACT): nan Stddev: nan
+STAT RMW Mean (ACT): nan Stddev: nan
+STAT Reads Mean (EA): nan Stddev: nan
+STAT Writes Mean (EA): nan Stddev: nan
+STAT RMW Mean (EA): nan Stddev: nan
+STAT Reads Mean (ISS): nan Stddev: nan
+STAT Writes Mean (ISS): nan Stddev: nan
+STAT RMW Mean (ISS): nan Stddev: nan
+STAT ExceptionWait Mean: 0.000 Stddev: 0.000
+STAT Availability: 0.976 Efficiency: 0.926 Utility: 0.897
+
+STAT Processor: 1 EndPhase: -1 Issued: 837 Graduated: 737
+STAT Execution time: 1452 Start time: 19043704 Since last grad: 980
+STAT ALU time: Grads 47 Ratio 0.0461
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 0 Ratio nan
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 0 Ratio nan
+STAT Release time: Grads 0 Ratio nan
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 9 Ratio 0.0062
+STAT Read time: Grads 39 Ratio 0.0324
+STAT Branch time: Grads 46 Ratio 0.0324
+STAT FPU time: Grads 0 Ratio nan
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 302 Ratio 0.2080
+STAT Read miss time: Grads 0 Ratio nan
+STAT Write miss time: Grads 0 Ratio nan
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 39 Ratio 0.0324
+STAT Read L2 time: Grads 0 Ratio nan
+STAT Read localmem time: Grads 0 Ratio nan
+STAT Read remotemem time: Grads 0 Ratio nan
+STAT Write L1 time: Grads 9 Ratio 0.0062
+STAT Write L2 time: Grads 0 Ratio nan
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 0 Ratio nan
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 1
+STAT Branch prediction rate: 0.7899
+STAT Return prediction rate: 0.5263
+STAT Reads Mean (ACT): nan Stddev: nan
+STAT Writes Mean (ACT): nan Stddev: nan
+STAT RMW Mean (ACT): nan Stddev: nan
+STAT Reads Mean (EA): nan Stddev: nan
+STAT Writes Mean (EA): nan Stddev: nan
+STAT RMW Mean (EA): nan Stddev: nan
+STAT Reads Mean (ISS): nan Stddev: nan
+STAT Writes Mean (ISS): nan Stddev: nan
+STAT RMW Mean (ISS): nan Stddev: nan
+STAT ExceptionWait Mean: 0.000 Stddev: 0.000
+STAT Availability: 0.317 Efficiency: 0.910 Utility: 0.881
+
+STAT Processor: 2 EndPhase: -1 Issued: 834 Graduated: 737
+STAT Execution time: 1268 Start time: 19043888 Since last grad: 798
+STAT ALU time: Grads 46 Ratio 0.0521
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 0 Ratio nan
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 0 Ratio nan
+STAT Release time: Grads 0 Ratio nan
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 9 Ratio 0.0071
+STAT Read time: Grads 38 Ratio 0.0363
+STAT Branch time: Grads 44 Ratio 0.0355
+STAT FPU time: Grads 0 Ratio nan
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 304 Ratio 0.2397
+STAT Read miss time: Grads 0 Ratio nan
+STAT Write miss time: Grads 0 Ratio nan
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 38 Ratio 0.0363
+STAT Read L2 time: Grads 0 Ratio nan
+STAT Read localmem time: Grads 0 Ratio nan
+STAT Read remotemem time: Grads 0 Ratio nan
+STAT Write L1 time: Grads 9 Ratio 0.0071
+STAT Write L2 time: Grads 0 Ratio nan
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 0 Ratio nan
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 1
+STAT Branch prediction rate: 0.7971
+STAT Return prediction rate: 0.5263
+STAT Reads Mean (ACT): nan Stddev: nan
+STAT Writes Mean (ACT): nan Stddev: nan
+STAT RMW Mean (ACT): nan Stddev: nan
+STAT Reads Mean (EA): nan Stddev: nan
+STAT Writes Mean (EA): nan Stddev: nan
+STAT RMW Mean (EA): nan Stddev: nan
+STAT Reads Mean (ISS): nan Stddev: nan
+STAT Writes Mean (ISS): nan Stddev: nan
+STAT RMW Mean (ISS): nan Stddev: nan
+STAT ExceptionWait Mean: 0.000 Stddev: 0.000
+STAT Availability: 0.361 Efficiency: 0.910 Utility: 0.884
+
+STAT Processor: 3 EndPhase: -1 Issued: 835 Graduated: 737
+STAT Execution time: 1347 Start time: 19043809 Since last grad: 877
+STAT ALU time: Grads 46 Ratio 0.0490
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 0 Ratio nan
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 0 Ratio nan
+STAT Release time: Grads 0 Ratio nan
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 9 Ratio 0.0067
+STAT Read time: Grads 38 Ratio 0.0334
+STAT Branch time: Grads 46 Ratio 0.0349
+STAT FPU time: Grads 0 Ratio nan
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 303 Ratio 0.2249
+STAT Read miss time: Grads 0 Ratio nan
+STAT Write miss time: Grads 0 Ratio nan
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 38 Ratio 0.0334
+STAT Read L2 time: Grads 0 Ratio nan
+STAT Read localmem time: Grads 0 Ratio nan
+STAT Read remotemem time: Grads 0 Ratio nan
+STAT Write L1 time: Grads 9 Ratio 0.0067
+STAT Write L2 time: Grads 0 Ratio nan
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 0 Ratio nan
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 1
+STAT Branch prediction rate: 0.8043
+STAT Return prediction rate: 0.5263
+STAT Reads Mean (ACT): nan Stddev: nan
+STAT Writes Mean (ACT): nan Stddev: nan
+STAT RMW Mean (ACT): nan Stddev: nan
+STAT Reads Mean (EA): nan Stddev: nan
+STAT Writes Mean (EA): nan Stddev: nan
+STAT RMW Mean (EA): nan Stddev: nan
+STAT Reads Mean (ISS): nan Stddev: nan
+STAT Writes Mean (ISS): nan Stddev: nan
+STAT RMW Mean (ISS): nan Stddev: nan
+STAT ExceptionWait Mean: 0.000 Stddev: 0.000
+STAT Availability: 0.340 Efficiency: 0.912 Utility: 0.883
+
+STAT Processor: 4 EndPhase: -1 Issued: 832 Graduated: 737
+STAT Execution time: 1120 Start time: 19044036 Since last grad: 652
+STAT ALU time: Grads 45 Ratio 0.0580
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 0 Ratio nan
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 0 Ratio nan
+STAT Release time: Grads 0 Ratio nan
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 9 Ratio 0.0080
+STAT Read time: Grads 37 Ratio 0.0393
+STAT Branch time: Grads 44 Ratio 0.0402
+STAT FPU time: Grads 0 Ratio nan
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 305 Ratio 0.2723
+STAT Read miss time: Grads 0 Ratio nan
+STAT Write miss time: Grads 0 Ratio nan
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 37 Ratio 0.0393
+STAT Read L2 time: Grads 0 Ratio nan
+STAT Read localmem time: Grads 0 Ratio nan
+STAT Read remotemem time: Grads 0 Ratio nan
+STAT Write L1 time: Grads 9 Ratio 0.0080
+STAT Write L2 time: Grads 0 Ratio nan
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 0 Ratio nan
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 1
+STAT Branch prediction rate: 0.8116
+STAT Return prediction rate: 0.5263
+STAT Reads Mean (ACT): nan Stddev: nan
+STAT Writes Mean (ACT): nan Stddev: nan
+STAT RMW Mean (ACT): nan Stddev: nan
+STAT Reads Mean (EA): nan Stddev: nan
+STAT Writes Mean (EA): nan Stddev: nan
+STAT RMW Mean (EA): nan Stddev: nan
+STAT Reads Mean (ISS): nan Stddev: nan
+STAT Writes Mean (ISS): nan Stddev: nan
+STAT RMW Mean (ISS): nan Stddev: nan
+STAT ExceptionWait Mean: 0.000 Stddev: 0.000
+STAT Availability: 0.407 Efficiency: 0.912 Utility: 0.886
+
+STAT Processor: 5 EndPhase: -1 Issued: 835 Graduated: 737
+STAT Execution time: 1207 Start time: 19043949 Since last grad: 737
+STAT ALU time: Grads 46 Ratio 0.0547
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 0 Ratio nan
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 0 Ratio nan
+STAT Release time: Grads 0 Ratio nan
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 9 Ratio 0.0075
+STAT Read time: Grads 38 Ratio 0.0373
+STAT Branch time: Grads 46 Ratio 0.0389
+STAT FPU time: Grads 0 Ratio nan
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 303 Ratio 0.2510
+STAT Read miss time: Grads 0 Ratio nan
+STAT Write miss time: Grads 0 Ratio nan
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 38 Ratio 0.0373
+STAT Read L2 time: Grads 0 Ratio nan
+STAT Read localmem time: Grads 0 Ratio nan
+STAT Read remotemem time: Grads 0 Ratio nan
+STAT Write L1 time: Grads 9 Ratio 0.0075
+STAT Write L2 time: Grads 0 Ratio nan
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 0 Ratio nan
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 1
+STAT Branch prediction rate: 0.8043
+STAT Return prediction rate: 0.5263
+STAT Reads Mean (ACT): nan Stddev: nan
+STAT Writes Mean (ACT): nan Stddev: nan
+STAT RMW Mean (ACT): nan Stddev: nan
+STAT Reads Mean (EA): nan Stddev: nan
+STAT Writes Mean (EA): nan Stddev: nan
+STAT RMW Mean (EA): nan Stddev: nan
+STAT Reads Mean (ISS): nan Stddev: nan
+STAT Writes Mean (ISS): nan Stddev: nan
+STAT RMW Mean (ISS): nan Stddev: nan
+STAT ExceptionWait Mean: 0.000 Stddev: 0.000
+STAT Availability: 0.379 Efficiency: 0.912 Utility: 0.883
+
+STAT Processor: 6 EndPhase: -1 Issued: 832 Graduated: 737
+STAT Execution time: 1163 Start time: 19043993 Since last grad: 695
+STAT ALU time: Grads 45 Ratio 0.0559
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 0 Ratio nan
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 0 Ratio nan
+STAT Release time: Grads 0 Ratio nan
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 9 Ratio 0.0077
+STAT Read time: Grads 37 Ratio 0.0378
+STAT Branch time: Grads 44 Ratio 0.0387
+STAT FPU time: Grads 0 Ratio nan
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 305 Ratio 0.2623
+STAT Read miss time: Grads 0 Ratio nan
+STAT Write miss time: Grads 0 Ratio nan
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 37 Ratio 0.0378
+STAT Read L2 time: Grads 0 Ratio nan
+STAT Read localmem time: Grads 0 Ratio nan
+STAT Read remotemem time: Grads 0 Ratio nan
+STAT Write L1 time: Grads 9 Ratio 0.0077
+STAT Write L2 time: Grads 0 Ratio nan
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 0 Ratio nan
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 1
+STAT Branch prediction rate: 0.8116
+STAT Return prediction rate: 0.5263
+STAT Reads Mean (ACT): nan Stddev: nan
+STAT Writes Mean (ACT): nan Stddev: nan
+STAT RMW Mean (ACT): nan Stddev: nan
+STAT Reads Mean (EA): nan Stddev: nan
+STAT Writes Mean (EA): nan Stddev: nan
+STAT RMW Mean (EA): nan Stddev: nan
+STAT Reads Mean (ISS): nan Stddev: nan
+STAT Writes Mean (ISS): nan Stddev: nan
+STAT RMW Mean (ISS): nan Stddev: nan
+STAT ExceptionWait Mean: 0.000 Stddev: 0.000
+STAT Availability: 0.392 Efficiency: 0.912 Utility: 0.886
+
+STAT Processor: 7 EndPhase: -1 Issued: 832 Graduated: 737
+STAT Execution time: 1021 Start time: 19044135 Since last grad: 553
+STAT ALU time: Grads 45 Ratio 0.0637
+STAT User 1 time: Grads 0 Ratio nan
+STAT User 2 time: Grads 0 Ratio nan
+STAT User 3 time: Grads 0 Ratio nan
+STAT User 4 time: Grads 0 Ratio nan
+STAT User 5 time: Grads 0 Ratio nan
+STAT User 6 time: Grads 0 Ratio nan
+STAT User 7 time: Grads 0 Ratio nan
+STAT User 8 time: Grads 0 Ratio nan
+STAT User 9 time: Grads 0 Ratio nan
+STAT Barrier time: Grads 0 Ratio nan
+STAT Spin time: Grads 0 Ratio nan
+STAT Acquire time: Grads 0 Ratio nan
+STAT Release time: Grads 0 Ratio nan
+STAT RMW time: Grads 0 Ratio nan
+STAT Write time: Grads 9 Ratio 0.0088
+STAT Read time: Grads 37 Ratio 0.0431
+STAT Branch time: Grads 44 Ratio 0.0441
+STAT FPU time: Grads 0 Ratio nan
+STAT Except time: Grads 0 Ratio nan
+STAT MEMBAR time: Grads 0 Ratio nan
+STAT BUSY TIME: Grads 305 Ratio 0.2987
+STAT Read miss time: Grads 0 Ratio nan
+STAT Write miss time: Grads 0 Ratio nan
+STAT RMW miss time: Grads 0 Ratio nan
+STAT Read L1 time: Grads 37 Ratio 0.0431
+STAT Read L2 time: Grads 0 Ratio nan
+STAT Read localmem time: Grads 0 Ratio nan
+STAT Read remotemem time: Grads 0 Ratio nan
+STAT Write L1 time: Grads 9 Ratio 0.0088
+STAT Write L2 time: Grads 0 Ratio nan
+STAT Write localmem time: Grads 0 Ratio nan
+STAT Write remotemem time: Grads 0 Ratio nan
+STAT RMW L1 time: Grads 0 Ratio nan
+STAT RMW L2 time: Grads 0 Ratio nan
+STAT RMW localmem time: Grads 0 Ratio nan
+STAT RMW remotemem time: Grads 0 Ratio nan
+STAT RMW Late PF time: Grads 0 Ratio nan
+STAT Write Late PF time: Grads 0 Ratio nan
+STAT Read Late PF time: Grads 0 Ratio nan
+STAT Window overflows: 0 underflows: 1
+STAT Branch prediction rate: 0.8116
+STAT Return prediction rate: 0.5263
+STAT Reads Mean (ACT): nan Stddev: nan
+STAT Writes Mean (ACT): nan Stddev: nan
+STAT RMW Mean (ACT): nan Stddev: nan
+STAT Reads Mean (EA): nan Stddev: nan
+STAT Writes Mean (EA): nan Stddev: nan
+STAT RMW Mean (EA): nan Stddev: nan
+STAT Reads Mean (ISS): nan Stddev: nan
+STAT Writes Mean (ISS): nan Stddev: nan
+STAT RMW Mean (ISS): nan Stddev: nan
+STAT ExceptionWait Mean: 0.000 Stddev: 0.000
+STAT Availability: 0.447 Efficiency: 0.912 Utility: 0.886
+
+About to exit after time 19045157

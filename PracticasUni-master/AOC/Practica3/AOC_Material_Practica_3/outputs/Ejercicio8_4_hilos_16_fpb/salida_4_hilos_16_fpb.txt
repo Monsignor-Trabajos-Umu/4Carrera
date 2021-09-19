@@ -1,0 +1,28 @@
+Phase 1 STATS
+FILE ../outputs/Ejercicio8_4_hilos_16_fpb/jacobi_rc_err
+Total elapsed time of simulation 203.000000
+Simulated time 19110500.500000
+
+Exec time IPC	Busy	Acq		Rel		Read	Write	RMW		Spin	Barrier
+1.91e+07  0.637	16.56	2.89	0.48	39.26	23.04	0.00	0.00	17.76
+
+USER:	1	2	3	4	5	6	7	8	9
+USER:	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+
+	Read L1 =	26.15	Write L1 =	6.94	RMW L1 =	0.00
+	Read L2 =	1.50	Write L2 =	0.63	RMW L2 =	0.00
+	Read local =	0.01	Write local =	0.01	RMW remote =	0.00
+	Read remote =	11.60	Write remote =	15.47	RMW remote =	0.00
+
+LAT   :	RD	WT	RMW
+Addr  :	9.78	20.92	399.69
+
+Issue :	3.32	18.93	397.33
+
+Active:	25.11	47.02	404.24
+
+BUSY=12.43	ALU=0.07	FPU=4.05	BRU=0.01
+READ MISS=13.11	WRITE MISS=16.11	RMW MISS=0.00
+Avail=0.321	Eff=1.999	Util=0.994
+
+----------------------------------------------------------------
